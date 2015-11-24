@@ -21,4 +21,4 @@
   - [Applications](https://github.com/solid/solid-apps)
 
 - Contribute
-  - Join our conversations on [gitter](https://gitter.com/solid/solid)
+  - Join our conversations on [gitter](https://gitter.im/solid/solid)
