@@ -11,6 +11,7 @@
 - Undestanding
   - [Specification](https://github.com/solid/solid-spec)
   - [Talks](https://github.com/solid/talks)
+  - [Tutorials](https://bit.lu/solid-tutorial)
 
 - Implementing
   - [Sign-up/Login application](https://github.com/solid/solid-signup)
