@@ -1,6 +1,6 @@
 # Solid
 ![](https://img.shields.io/badge/project-Solid-7C4DFF.svg?style=flat-square)
-> Solid - Re-decentralize the web (project repo)
+> Re-decentralize the web
 
 ## Project directory
 
