@@ -1,5 +1,5 @@
 # Solid
-![](https://img.shields.io/badge/project-Solid-7C4DFF.svg?style=flat-square)
+[![](https://img.shields.io/badge/project-Solid-7C4DFF.svg?style=flat-square)](https://github.com/solid/solid)
 > Re-decentralize the web
 
 ## Project directory
