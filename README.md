@@ -13,8 +13,7 @@
   - [Test suite](https://github.com/solid/solid-tests)
   - [Gold (Go)](https://github.com/linkeddata/gold)
   - [Ldnode (Node)](https://github.com/linkeddata/ldnode) - soon [node-solid](https://github.com/nicola/node-solid)
-    - [Access Control](https://github.com/solid/node-solid-acl)
-    - [Websockets](https://github.com/solid/node-solid-ws)
+    - see all the [node packages](https://github.com/solid?utf8=%E2%9C%93&query=node)
 
 - Community
   - [Server implementations](https://github.com/solid/solid-platform)
