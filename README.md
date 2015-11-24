@@ -19,3 +19,6 @@
   - [Server implementations](https://github.com/solid/solid-platform)
   - [Identity providers](https://github.com/solid/solid-idps)
   - [Applications](https://github.com/solid/solid-apps)
+
+- Contribute
+  - Join our conversations on [gitter](https://gitter.com/solid/solid)
