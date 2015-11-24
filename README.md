@@ -4,7 +4,7 @@
 
 ![Solid Logo](https://avatars3.githubusercontent.com/u/14262490?v=3&s=200)
 
-> Re-decentralize the web
+> Re-decentralizing the web
 
 ## Project directory
 
