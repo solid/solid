@@ -8,10 +8,10 @@
 
 ## Project directory
 
-- Undestanding
+- Understanding
   - [Specification](https://github.com/solid/solid-spec)
   - [Talks](https://github.com/solid/talks)
-  - [Tutorials](https://bit.lu/solid-tutorial)
+  - [Tutorials](https://melvincarvalho.gitbooks.io/solid-tutorials/content/solid_spec.html)
 
 - Implementing
   - [Sign-up/Login application](https://github.com/solid/solid-signup)
