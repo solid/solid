@@ -17,8 +17,7 @@
   - [Sign-up/Login application](https://github.com/solid/solid-signup)
   - [Test suite](https://github.com/solid/solid-tests)
   - [Gold (Go)](https://github.com/linkeddata/gold)
-  - [Ldnode (Node)](https://github.com/linkeddata/ldnode) - soon [node-solid](https://github.com/nicola/node-solid)
-    - see all the [node packages](https://github.com/solid?utf8=%E2%9C%93&query=node)
+  - [Ldnode (Node)](https://github.com/linkeddata/ldnode)
 
 - Community
   - [Server implementations](https://github.com/solid/solid-platform)
