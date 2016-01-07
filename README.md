@@ -6,6 +6,38 @@
 
 > Re-decentralizing the web
 
+Solid (derived from "**so**cial **li**nked **d**ata") is a proposed set of
+conventions and tools for building *decentralized social applications* based on
+[Linked Data](http://www.w3.org/DesignIssues/LinkedData.html) principles. Solid
+is modular and extensible. It relies as much as possible on existing
+[W3C](http://www.w3.org/) standards and protocols.
+
+Specifically, Solid is:
+
+* A tech stack -- a set of complementary
+  [standards](https://github.com/solid/solid-spec#standards-used) and
+  [data formats/vocabularies](https://github.com/solid/vocab) that together
+  provide capabilities that are currently available only through centralized
+  social media services (think Facebook/Twitter/LinkedIn/many others), such as
+  *identity*, *authentication and login*, *authorization and permission lists*,
+  *contact management*, *messaging and notifications*, *feed aggregation and
+  subscription*, *comments and discussions*, and more.
+* A **[Specifications document](https://github.com/solid/solid-spec)**
+  that describes a REST API that extends those existing
+  standards, contains design notes on the individual components used, and is
+  intended as a guide for developers who plan to build servers or applications.
+* A set of [servers](https://github.com/solid/solid-platform#servers) that
+  implement this specification.
+* A [test suite](https://github.com/solid/solid-tests) for testing and validating
+  Solid implementations.
+* An ecosystem of [social apps](https://github.com/solid/solid-apps),
+  [identity providers](https://github.com/solid/solid-idp-list) and helper
+  libraries (such as [solid.js](https://github.com/solid/solid.js)) that run on
+  the Solid platform.
+* A community providing documentation,
+  [tutorials](https://github.com/solid/solid-tutorials) and
+  [talks/presentations](https://github.com/solid/talks).
+
 ## Project directory
 
 - Undestanding
