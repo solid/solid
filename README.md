@@ -38,23 +38,22 @@ Specifically, Solid is:
   [tutorials](https://github.com/solid/solid-tutorials) and
   [talks/presentations](https://github.com/solid/talks).
 
-## Project directory
+## Solid Project Workflow
 
-- Undestanding
-  - [Specification](https://github.com/solid/solid-spec)
-  - [Talks](https://github.com/solid/talks)
-  - [Tutorials](https://melvincarvalho.gitbooks.io/solid-tutorials/)
+To contribute to Solid development, and to bring up issues or feature requests,
+please use the following workflow:
 
-- Implementing
-  - [Sign-up/Login application](https://github.com/solid/solid-signup)
-  - [Test suite](https://github.com/solid/solid-tests)
-  - [Gold (Go)](https://github.com/linkeddata/gold)
-  - [Ldnode (Node)](https://github.com/linkeddata/ldnode)
+1. Have a question or a feature request or a concern about the Solid framework,
+  or on one of its servers? **Open an issue on
+  [solid/solid](https://github.com/solid)** (this repo here).
 
-- Community
-  - [Server implementations](https://github.com/solid/solid-platform)
-  - [Identity providers](https://github.com/solid/solid-idps)
-  - [Applications](https://github.com/solid/solid-apps)
+2. Have an issue with the *Solid spec* specifically? **Open an issue on
+  [solid/solid](https://github.com/solid) anyway.** And then, as a result of
+  discussion, if it's agreed that it is actually a Spec issue, it will be moved
+  to `solid-spec`.
 
-- Contribute
-  - Join our conversations on [gitter](https://gitter.im/solid/solid)
+3. The individual [solid/solid](https://github.com/solid) issues can coordinate
+  and track component/dependent issues on the various affected Solid servers,
+  apps, and so on.
+
+Join our conversations on [gitter](https://gitter.im/solid/solid)
