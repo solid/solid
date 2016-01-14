@@ -34,7 +34,7 @@ Specifically, Solid is:
   [identity providers](https://github.com/solid/solid-idp-list) and helper
   libraries (such as [solid.js](https://github.com/solid/solid.js)) that run on
   the Solid platform.
-* A community providing documentation, discussino (see the
+* A community providing documentation, discussion (see the
   [solid gitter channel](https://gitter.im/solid/solid)),
   [tutorials](https://github.com/solid/solid#tutorials) and
   [talks/presentations](https://github.com/solid/talks).
