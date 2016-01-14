@@ -34,8 +34,9 @@ Specifically, Solid is:
   [identity providers](https://github.com/solid/solid-idp-list) and helper
   libraries (such as [solid.js](https://github.com/solid/solid.js)) that run on
   the Solid platform.
-* A community providing documentation,
-  [tutorials](https://github.com/solid/solid-tutorials) and
+* A community providing documentation, discussino (see the
+  [solid gitter channel](https://gitter.im/solid/solid)),
+  [tutorials](https://github.com/solid/solid#tutorials) and
   [talks/presentations](https://github.com/solid/talks).
 
 ## Solid Project Workflow
@@ -56,4 +57,11 @@ please use the following workflow:
   and track component/dependent issues on the various affected Solid servers,
   apps, and so on.
 
-Join our conversations on [gitter](https://gitter.im/solid/solid)
+## Tutorials
+
+* [Intro to Solid Tutorial](https://github.com/solid/solid-tutorial-intro)
+  introductory Solid tutorial using the
+  [solid.js](https://github.com/solid/solid.js) library
+
+* [Solid Angular Apps Tutorial](https://github.com/solid/solid-tutorial-angular):
+  a set of example apps built on the Solid platform using AngularJS.
