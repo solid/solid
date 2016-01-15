@@ -57,6 +57,8 @@ please use the following workflow:
   and track component/dependent issues on the various affected Solid servers,
   apps, and so on.
 
+## Project directory
+
 - Useful links
   - [Specification](https://github.com/solid/solid-spec)
   - [Talks](https://github.com/solid/talks)
