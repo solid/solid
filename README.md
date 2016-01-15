@@ -39,23 +39,6 @@ Specifically, Solid is:
   [tutorials](https://github.com/solid/solid#tutorials) and
   [talks/presentations](https://github.com/solid/talks).
 
-## Solid Project directory
-
-- Useful links
-  - [Specification](https://github.com/solid/solid-spec)
-  - [Talks](https://github.com/solid/talks)
-  - [Tutorials](https://melvincarvalho.gitbooks.io/solid-tutorials/)
-
-- Implementing
-  - [Sign-up/Login application](https://github.com/solid/solid-signup)
-  - [Solid Server Test suite](https://github.com/solid/solid-tests)
-
-- Community
-  - [Server implementations](https://github.com/solid/solid-platform)
-  - [Identity providers](https://github.com/solid/solid-idps)
-  - [Applications](https://github.com/solid/solid-apps)
-  - Join our conversations on [gitter](https://gitter.im/solid/solid)
-
 ## Solid Project Workflow
 
 To contribute to Solid development, and to bring up issues or feature requests,
@@ -74,11 +57,23 @@ please use the following workflow:
   and track component/dependent issues on the various affected Solid servers,
   apps, and so on.
 
-## Tutorials
+- Useful links
+  - [Specification](https://github.com/solid/solid-spec)
+  - [Talks](https://github.com/solid/talks)
+  - Tutorials
+    - [Intro to Solid Tutorial](https://github.com/solid/solid-tutorial-intro)
+      introductory Solid tutorial using the
+      [solid.js](https://github.com/solid/solid.js) library
+    - [Solid Angular Apps Tutorial](https://github.com/solid/solid-tutorial-angular):
+      a set of example apps built on the Solid platform using AngularJS.
 
-* [Intro to Solid Tutorial](https://github.com/solid/solid-tutorial-intro)
-  introductory Solid tutorial using the
-  [solid.js](https://github.com/solid/solid.js) library
 
-* [Solid Angular Apps Tutorial](https://github.com/solid/solid-tutorial-angular):
-  a set of example apps built on the Solid platform using AngularJS.
+- Implementing
+  - [Sign-up/Login application](https://github.com/solid/solid-signup)
+  - [Solid Server Test suite](https://github.com/solid/solid-tests)
+
+- Community
+  - [Server implementations](https://github.com/solid/solid-platform)
+  - [Identity providers](https://github.com/solid/solid-idps)
+  - [Applications](https://github.com/solid/solid-apps)
+  - Join our conversations on [gitter](https://gitter.im/solid/solid)
