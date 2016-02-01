@@ -68,6 +68,7 @@ please use the following workflow:
       [solid.js](https://github.com/solid/solid.js) library
     - [Solid Angular Apps Tutorial](https://github.com/solid/solid-tutorial-angular):
       a set of example apps built on the Solid platform using AngularJS.
+    - [Working with RDF data](https://github.com/solid/solid-tutorial-rdflib.js) tutorial about using a library called [rdflib.js](https://github.com/linkeddata/rdflib.js) 
 
 
 - Implementing
