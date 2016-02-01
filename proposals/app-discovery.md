@@ -12,7 +12,7 @@ The public profile is what you get when you look up someone's WebID directly.
 Strip off any hash and localid part. For example.
 
 ```
-  https://example.databox.me/profile/card#me    ->     https://example.databox.me/profile/card
+https://example.databox.me/profile/card#me -> https://example.databox.me/profile/card
 ```
 
 The starting point of discovery is a 
@@ -42,13 +42,13 @@ links to discover where relevant configuration/preferences data is located.
 A list (public or private) of
 
 ```
-  <#me>  space:AppIndex  <byType>.
+<#me>  space:AppIndex  <byType>.
 ```
 
 And then in there things like
 
 ```
- <#r5>  a solid:AppRegistration;
+<#r5>  a solid:AppRegistration;
   solid:forApp  ghld:app-shedule
   solid:instanceIndex </polls/list.ttl>.
 ```
