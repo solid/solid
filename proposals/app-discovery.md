@@ -1,7 +1,8 @@
 # Solid application configuration/preferences discovery (Draft)
 
 The following describes app configuration discovery in the Solid framework 
-using HTTP link following aka "follow your nose".
+using HTTP link following aka "follow your nose". This should not be 
+confused with [application data discovery](https://github.com/solid/solid/tree/master/proposals/data-discovery.md)
 
 ## Starting point -- WebID
 
