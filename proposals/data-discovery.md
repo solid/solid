@@ -1,11 +1,12 @@
-# Solid Discovery (Draft)
+# Solid application data discovery (Draft)
 
-The following describes discovery in the Solid framework using HTTP link
-following aka "follow your nose".
+The following describes application data discovery in the Solid framework 
+using HTTP link following aka "follow your nose". This should not be 
+confused with [application preferences/configuration discovery](https://github.com/solid/solid/tree/master/proposals/app-discovery.md).
 
-### Starting point -- WebID
+## Starting point -- WebID
 
-#### Fetching the Profile
+### Fetching the Profile
 
 The public profile is what you get when you look up someone's WebID directly.
 Strip off any hash and localid part. For example.
@@ -33,13 +34,13 @@ The preferencesFile is a private file that is linked from the main WebID
 profile, and contains miscellaneous data not in your public profile. In
 general, the same triples will be put in the public profile.
 
-### Discoverability
+## Discoverability
 
 Once a complete view of the profile has been created, applications will follow
 links to discover where relevant data is located, in order to read and write
 data there.
 
-## Type registry configuration
+### Type registry configuration
 
 The type registry is typically document that holds resources that register a
 specific resource type and map it to a location on the user's data space.
@@ -77,31 +78,6 @@ The TypeIndex resource will contain things like:
   solid:instance </contacts/book#this>.
 ```
 
-### By application
-
-A list (public or private) of
-
-```
-  <#me>  space:AppIndex  <byType>.
-```
-
-And then in there things like
-
-```
- <#r5>  a solid:AppRegistration;
-  solid:forApp  ghld:app-shedule
-  solid:instanceIndex </polls/list.ttl>.
-```
-
-and then in `/polls/list.ttl` things like
-
-```
-<#i345> a solid:Instance;
-  solid:forApp  ghld:app-shedule;
-  dc:created 2012-12-09;
-  solid:instance </polls/list3/congig#this>;
-```
-
 Alternative:
 
 - An app may register a defaultApp URI when creating a data container.
@@ -109,8 +85,6 @@ Alternative:
 - app can be loaded first, which in turns fetches the meta file.
 
 ### Storage Discovery
-
-#### Storage
 
 * Starting Point: WebID
 * Type: [pim : storage](http://www.w3.org/ns/pim/space#storage)
