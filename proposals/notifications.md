@@ -1,6 +1,6 @@
 # Solid Notifications
 
-Solid notifications are intended to announce social interactions and data. A Solid notification is an [LDP RDF Source](https://www.w3.org/TR/ldp/#dfn-linked-data-platform-rdf-source) which is submitted to and resides in an [LDP Container](https://www.w3.org/TR/ldp/#ldpc), i.e., a [Solid inbox](inbox.md).
+Solid notifications are intended to announce social interactions and data. A Solid notification is an [LDP Resource](https://www.w3.org/TR/ldp/#ldpr) which is submitted to and resides in an [LDP Container](https://www.w3.org/TR/ldp/#ldpc), i.e., a [Solid inbox](inbox.md).
 
 The contents of a notification is application specific. We derive two core principles from this:
 
