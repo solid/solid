@@ -23,7 +23,7 @@ Although providing enriched (meta)data is voluntary, provenance level data like 
 
 
 ## Authorization
-The owner of the Solid inbox typically sets its ACL rules and thereby for the notifications it contains. For example, notifications may be set for public read and append so that applications can use a FYN approach to discover and display the contents of a notification, as well as submit new notifications.
+The owner of the Solid inbox typically sets its ACL rules and thereby for the notifications it contains. For example, notifications may be set for public read and append so that applications can use a FYN approach to discover and display the contents of a notification, as well as submit new notifications. Further, the ACL settings for the inbox may determine which agents can send notifications.
 
 
 ## Notification types
@@ -46,7 +46,7 @@ Making statements about statements; a statement in which each subject, property,
 This approach is useful if there is a need to further extend the statement's description or refer to it as a whole.
 
 ### Qualified relations
-A particular grouping of triples which describe and qualify the relations, i.e., the vocabulary in use typically gives meaning to the statements when consumed as a whole. The examples below tend to refer to resources where the body of the content can be discovered.
+A particular grouping of triples which describe and qualify the relations, i.e., the vocabulary in use typically gives meaning to the statements when consumed as a whole. The examples below tend to refer to external resources where the body of the content can be discovered.
 
 ActivityStreams:
 ```
@@ -69,7 +69,7 @@ Semantic Pingback:
 ```
 
 ### Any data
-This is typically in cases where an application may want to notify with any information. Although not strictly exclusive with the above approaches, a notification may contain the complete message and not necessarily refer to the origin data (external resource).
+This is typically in cases where an application may want to notify with any information. A notification may contain the complete payload and not necessarily refer to the origin data (external resource).
 ```
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
