@@ -11,7 +11,7 @@ Applications can create notifications to use any vocabulary to describe its cont
 
 
 ## Discovery
-As notifications are contained in inboxes, a Solid inbox container has `ldp:contains` relations to each notification resource. If a [Solid outbox](outbox.md) is employed, it may also contain references to the notification.
+An inbox container can be discovered via the `solid:inbox` property, in which each notification can be discovered via `ldp:contains` relations. If a [Solid outbox](outbox.md) is employed, it may also contain references to the notification.
 
 
 ## Notification integrity
