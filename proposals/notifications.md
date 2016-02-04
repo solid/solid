@@ -29,8 +29,8 @@ The owner of the Solid inbox typically sets its ACL rules and thereby for the no
 ## Notification types
 Here we exemplify some types of notifications:
 
-### Singleton pattern
-The singleton pattern is the simplest notification in terms of its data payload. It contains the most essential data which makes up a notification e.g, Alice liked an article:
+### Single statement
+A single triple statement is the simplest notification in terms of its data payload. It contains the most essential data which makes up a notification e.g, Alice liked an article:
 ```
 <http://example.org/profile/card#alice> :liked <http://example.net/article> .
 ```
