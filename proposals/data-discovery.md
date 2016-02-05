@@ -67,17 +67,29 @@ it, the preferences file):
 
 In the public profile:
 ```
-<#me>  space:typeIndex  </settings/publicTypeIndex.ttl>.
+@prefix solid: <https://www.w3.org/ns/solid/terms#>.
+
+...
+
+<#me>  solid:typeIndex  </settings/publicTypeIndex.ttl>.
 ```
 
 In the preferencesFile:
 ```
-<#me>  space:typeIndex  </settings/privateTypeIndex.ttl>.
+@prefix solid: <https://www.w3.org/ns/solid/terms#>.
+
+...
+
+<#me>  solid:typeIndex  </settings/privateTypeIndex.ttl>.
 ```
 
 The TypeIndex resource `/settings/privateTypeIndex.ttl` will contain things like:
 ```
-<#ab09fd>  a solid:TypeRegistration;
+@prefix solid: <https://www.w3.org/ns/solid/terms#>.
+
+...
+
+<#ab09fd> a solid:TypeRegistration;
     solid:forClass vcard:AddressBook;
     solid:instance </contacts/>.
 ```
@@ -99,7 +111,9 @@ For example, for a given WebID (https://example.databox.me/card#me),
 the corresponding storage location URI is https://example.databox.me/.
 
 ```
-<#me>
-space:storage <.> .
-<http://www.w3.org/ns/pim/space#storage> <../> ;
+@prefix space: <http://www.w3.org/ns/pim/space#> .
+
+...
+
+<#me> space:storage <.> .
 ```
