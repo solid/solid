@@ -7,11 +7,35 @@ The contents of a notification is application specific. We derive two core princ
 1. a notification can contain arbitrary data
 2. a notification is vocabulary agnostic
 
-Applications can create notifications to use any vocabulary to describe its contents in any shape and form. Multiple notifications can be contained inside a single resource or span across different resources. A single resource with multiple notifications may be suitable for `HTTP PATCH`, whereas multiple resources containing a single notification may be suitable for `HTTP POST` or `PUT`.
+Applications can create notifications to use any vocabulary to describe its contents in any shape and form. Multiple notifications can be contained inside a single resource or span across different resources. A single resource with multiple notifications may be suitable for `HTTP PATCH`, whereas multiple resources containing a single notification may be suitable for `HTTP POST` or `PUT`. If different access controls are desired for inboxes and notifications, implementing a multiple notification approach with `HTTP POST` or `PUT` may be preferable.
 
+
+## Namespaces and document conventions
+The following namespaces are used in this document:
+
+|Prefix|Namespace
+|------|---------
+|solid|http://www.w3.org/ns/solid/terms#
+|xsd|http://www.w3.org/2001/XMLSchema#
+|dcterms|http://purl.org/dc/terms/
+|sioc|http://rdfs.org/sioc/ns#
+|foaf|http://xmlns.com/foaf/0.1/
+|pingback|http://purl.org/net/pingback/
+|as|http://www.w3.org/ns/activitystreams#
+
+
+
+All RDF examples are written in Turtle syntax.
 
 ## Discovery
-An inbox container can be discovered via the `solid:inbox` property, in which each notification can be discovered via `ldp:contains` relations. If a [Solid outbox](outbox.md) is employed, it may also contain references to the notification.
+An inbox container can be discovered via the `solid:inbox` property, in which each notification can be discovered via `ldp:contains` relations. Notifications that are of LDP RDF Source should be instances of `solid:Notification`. Although `solid:Notification` is not required to discover notifications, it is good practice to instantiate notifications for the purpose of data integrity and re-use. An example:
+```
+<https://example.org/profile> solid:inbox <https://example.net/inbox/> .
+<https://example.net/inbox/> ldp:contains <https://example.net/inbox/abc123> .
+<https://example.net/inbox/abc123> a solid:Notification .
+```
+
+If a [Solid outbox](outbox.md) is employed, it may also contain references to the notification.
 
 
 ## Notification integrity
@@ -38,7 +62,7 @@ A single triple statement is the simplest notification in terms of its data payl
 ### RDF Statements
 Making statements about statements; a statement in which each subject, property, object of a triple is described with its own triple:
 ```
-<http://example.org/inbox/abc123> a rdf:Statement ;
+<http://example.org/inbox/abc123> a solid:Notification , rdf:Statement ;
   rdf:subject <http://example.org/profile/card#alice> ;
   rdf:property :liked ;
   rdf:object <http://example.net/article> .
@@ -50,20 +74,18 @@ A particular grouping of triples which describe and qualify the relations, i.e.,
 
 ActivityStreams:
 ```
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix as: <http://www.w3.org/ns/activitystreams#> .
-<> a as:Announce ;
+<> a solid:Notification , as:Announce ;
     as:object <https://example.org/26d8c1> ;
     as:context <http://www.w3.org/ns/oa#hasTarget> ;
     as:target <https://example.net/article#introduction> ;
     as:updated "2016-02-02T18:58:50.719Z"^^xsd:dateTime ;
-    as:actor <http://example.org/profile/card#alice> .
+    as:actor <http://example.org/profile/card#alice> ;
+    schema:license <http://creativecommons.org/licenses/by-sa/4.0/> .
 ```
 
 Semantic Pingback:
 ```
-@prefix pingback: <http://purl.org/net/pingback/> .
-<> a pingback:Request ;
+<> a solid:Notification , pingback:Request ;
     pingback:source <http://example.net/foo/abc123> ;
     pingback:target <http://example.org/article/index> .
 ```
@@ -71,12 +93,8 @@ Semantic Pingback:
 ### Any data
 This is typically in cases where an application may want to notify with any information. A notification may contain the complete payload and not necessarily refer to the origin data (external resource).
 ```
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix sioc: <http://rdfs.org/sioc/ns#> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
-<> a sioc:Post ;
-  dcterms:created "2015-12-23T16:44:21+00:00"^^xsd:#dateTime ;
+<> a solid:Notification , sioc:Post ;
+  dcterms:created "2015-12-23T16:44:21Z"^^xsd:#dateTime ;
   dcterms:title "New blog post" ;
   sioc:content "Lorem ipsum dolor sit amet, consectetur adipiscing elit..." ;
   sioac:has_creator <#author> .
