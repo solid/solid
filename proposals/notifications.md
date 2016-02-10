@@ -22,6 +22,7 @@ The following namespaces are used in this document:
 |foaf|http://xmlns.com/foaf/0.1/
 |pingback|http://purl.org/net/pingback/
 |as|http://www.w3.org/ns/activitystreams#
+|schema|https://schema.org/
 
 
 
