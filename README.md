@@ -79,4 +79,4 @@ please use the following workflow:
   - [Server implementations](https://github.com/solid/solid-platform)
   - [Identity providers](https://github.com/solid/solid-idps)
   - [Applications](https://github.com/solid/solid-apps)
-  - Join our conversations on [gitter](https://gitter.im/solid/solid)
+  - Join our conversations in our [gitter chat room](https://gitter.im/solid/chat)
