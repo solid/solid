@@ -75,23 +75,28 @@ In the public profile:
 ```
 
 In the preferencesFile:
+
 ```
 @prefix solid: <https://www.w3.org/ns/solid/terms#>.
-
-...
-
+# ...
 <#me>  solid:typeIndex  </settings/privateTypeIndex.ttl>.
 ```
 
-The TypeIndex resource `/settings/privateTypeIndex.ttl` will contain things like:
+The TypeIndex resource `/settings/privateTypeIndex.ttl` will contain links to
+resources or containers. For example:
+
 ```
 @prefix solid: <https://www.w3.org/ns/solid/terms#>.
-
-...
-
+@prefix sioc: <http://rdfs.org/sioc/ns#>.
+@prefix ldp: <http://www.w3.org/ns/ldp#>.
+# ...
 <#ab09fd> a solid:TypeRegistration;
     solid:forClass vcard:AddressBook;
-    solid:instance </contacts/>.
+    solid:instance </contacts/addressBook.ttl>.
+
+<#ab09cc> a solid:TypeRegistration;
+    solid:forClass sioc:Post;
+    ldp:BasicContainer </posts/>.
 ```
 
 Optional:
