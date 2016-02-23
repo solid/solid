@@ -68,37 +68,40 @@ In the public profile:
 ```
 @prefix solid: <https://www.w3.org/ns/solid/terms#>.
 # ...
-<#me>  solid:typeIndex  </settings/publicTypeIndex.ttl>.
+<#me> solid:typeIndex </settings/publicTypeIndex.ttl>,
+  </settings/privateTypeIndex.ttl>.
 ```
 
 The corresponding *public* Type Index resource `/settings/publicTypeIndex.ttl`
-will contain links to public resources or containers. For example:
+(with a public-readable ACL) will contain links to public resources or
+containers. Note that the public nature of this index is not derived from the
+name, but by the public ACL and the `solid:PublicTypeIndex` designation.
+For example:
 
 ```
 @prefix solid: <https://www.w3.org/ns/solid/terms#>.
-# ...
-<#ab09fd> a solid:PublicTypeRegistration;
+
+<> a solid:PublicTypeIndex .
+
+<#ab09fd> a solid:TypeRegistration;
     solid:forClass vcard:AddressBook;
     solid:instance </contacts/addressBook.ttl>.
 ```
 
-In the preferencesFile (which is private by default):
-
-```
-@prefix solid: <https://www.w3.org/ns/solid/terms#>.
-# ...
-<#me>  solid:typeIndex  </settings/privateTypeIndex.ttl>.
-```
-
 The corresponding *private* Type Index resource `/settings/privateTypeIndex.ttl`
-will contain links to private resources or containers. For example:
+(with a private/owner-only ACL) will contain links to private resources or
+containers. Note that the private nature of this index is not derived from the
+name, but by the private ACL and the `solid:PrivateTypeIndex` designation. 
+For example:
 
 ```
 @prefix solid: <https://www.w3.org/ns/solid/terms#>.
 @prefix sioc: <http://rdfs.org/sioc/ns#>.
 @prefix ldp: <http://www.w3.org/ns/ldp#>.
 
-<#ab09cc> a solid:PrivateTypeRegistration;
+<> a solid:PrivateTypeIndex .
+
+<#ab09cc> a solid:TypeRegistration;
     solid:forClass sioc:Post;
     ldp:BasicContainer </posts/>.
 ```
