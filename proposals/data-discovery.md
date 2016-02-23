@@ -91,7 +91,7 @@ For example:
 The corresponding *private* Type Index resource `/settings/privateTypeIndex.ttl`
 (with a private/owner-only ACL) will contain links to private resources or
 containers. Note that the private nature of this index is not derived from the
-name, but by the private ACL and the `solid:PrivateTypeIndex` designation. 
+name, but by the private ACL and the `solid:PrivateTypeIndex` designation.
 For example:
 
 ```
@@ -103,7 +103,7 @@ For example:
 
 <#ab09cc> a solid:TypeRegistration;
     solid:forClass sioc:Post;
-    ldp:BasicContainer </posts/>.
+    solid:instanceContainer </posts/>.
 ```
 
 Optional:
