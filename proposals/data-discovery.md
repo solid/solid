@@ -68,7 +68,18 @@ In the public profile:
 ```
 @prefix solid: <https://www.w3.org/ns/solid/terms#>.
 # ...
-<#me>  solid:publicTypeIndex  </settings/publicTypeIndex.ttl>.
+<#me>  solid:typeIndex  </settings/publicTypeIndex.ttl>.
+```
+
+The corresponding *public* Type Index resource `/settings/publicTypeIndex.ttl`
+will contain links to public resources or containers. For example:
+
+```
+@prefix solid: <https://www.w3.org/ns/solid/terms#>.
+# ...
+<#ab09fd> a solid:PublicTypeRegistration;
+    solid:forClass vcard:AddressBook;
+    solid:instance </contacts/addressBook.ttl>.
 ```
 
 In the preferencesFile (which is private by default):
@@ -76,22 +87,18 @@ In the preferencesFile (which is private by default):
 ```
 @prefix solid: <https://www.w3.org/ns/solid/terms#>.
 # ...
-<#me>  solid:privateTypeIndex  </settings/privateTypeIndex.ttl>.
+<#me>  solid:typeIndex  </settings/privateTypeIndex.ttl>.
 ```
 
-The TypeIndex resource `/settings/privateTypeIndex.ttl` will contain links to
-resources or containers. For example:
+The corresponding *private* Type Index resource `/settings/privateTypeIndex.ttl`
+will contain links to private resources or containers. For example:
 
 ```
 @prefix solid: <https://www.w3.org/ns/solid/terms#>.
 @prefix sioc: <http://rdfs.org/sioc/ns#>.
 @prefix ldp: <http://www.w3.org/ns/ldp#>.
-# ...
-<#ab09fd> a solid:TypeRegistration;
-    solid:forClass vcard:AddressBook;
-    solid:instance </contacts/addressBook.ttl>.
 
-<#ab09cc> a solid:TypeRegistration;
+<#ab09cc> a solid:PrivateTypeRegistration;
     solid:forClass sioc:Post;
     ldp:BasicContainer </posts/>.
 ```
