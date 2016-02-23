@@ -49,9 +49,7 @@ specific resource type and map it to a location on the user's data space.
 
 **Note:** The Type Registry is mainly intended as a Library discovery mechanism.
 Recommend that coarse-grained library types are registered (usually types that
-match containers as opposed to every RDF Class written by an app)
--- e.g. `vcard:AddressBook` and `sioc:Blog` as opposed to `vcard:Contact` and
-`sioc:Post`.
+match containers as opposed to every RDF Class written by an app).
 
 A typical Solid account will have a private type index, where applications will
 register the top container type. For example, a contacts app will register the
@@ -66,20 +64,19 @@ Both registry documents will be linked to from the user's main profile (and from
 it, the preferences file):
 
 In the public profile:
-```
-@prefix solid: <https://www.w3.org/ns/solid/terms#>.
-
-...
-
-<#me>  solid:typeIndex  </settings/publicTypeIndex.ttl>.
-```
-
-In the preferencesFile:
 
 ```
 @prefix solid: <https://www.w3.org/ns/solid/terms#>.
 # ...
-<#me>  solid:typeIndex  </settings/privateTypeIndex.ttl>.
+<#me>  solid:publicTypeIndex  </settings/publicTypeIndex.ttl>.
+```
+
+In the preferencesFile (which is private by default):
+
+```
+@prefix solid: <https://www.w3.org/ns/solid/terms#>.
+# ...
+<#me>  solid:privateTypeIndex  </settings/privateTypeIndex.ttl>.
 ```
 
 The TypeIndex resource `/settings/privateTypeIndex.ttl` will contain links to
@@ -117,8 +114,6 @@ the corresponding storage location URI is https://example.databox.me/.
 
 ```
 @prefix space: <http://www.w3.org/ns/pim/space#> .
-
-...
-
+# ...
 <#me> space:storage <.> .
 ```
