@@ -53,8 +53,6 @@ reuse. An example:
 <https://example.net/inbox/abc123> a solid:Notification .
 ```
 
-If a [Solid outbox](outbox.md) is employed, it may also contain references to the notification.
-
 
 ## Notification integrity
 
