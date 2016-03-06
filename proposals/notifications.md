@@ -1,9 +1,20 @@
-# Solid Notifications
+# Solid inboxes and notifications
+
+Solid inboxes are repositories for incoming social interactions and data. A
+Solid inbox is an [LDP Container](https://www.w3.org/TR/ldp/#ldpc) for Solid
+[notification](notifications.md). A resource can have one or more inboxes in
+order to facilitate different social interactions. For instance, user profile
+inboxes are typically intended to receive notifications like messages from other
+profiles, or application specific activities.
+
+By default, Solid servers should create an inbox for new profiles, and have the
+profile point at the inbox. Alternatives types of inboxes e.g., for documents or
+data fragments, may be created at the discretion of applications taking user's
+preferences into account.
 
 Solid notifications are intended to announce social interactions and data. A
 Solid notification is an [LDP Resource](https://www.w3.org/TR/ldp/#ldpr) which
-is submitted to and resides in an [LDP
-Container](https://www.w3.org/TR/ldp/#ldpc), i.e., a [Solid inbox](inbox.md).
+is submitted to and resides in an Solid inbox.
 
 The contents of a notification is application specific. We derive two core
 principles from this:
@@ -40,15 +51,17 @@ All RDF examples are written in Turtle syntax.
 
 ## Discovery
 
-An inbox container can be discovered via the `solid:inbox` property, in which
-each notification can be discovered via `ldp:contains` relations. Notifications
-that are of LDP RDF Source should be instances of `solid:Notification`. Although
-`solid:Notification` is not required to discover notifications, it is good
-practice to instantiate notifications for the purpose of data integrity and
-reuse. An example:
+An inbox container must be discoverable via the `solid:inbox` property, and
+should be instances of `solid:Inbox`. Each notification can be discovered via
+`ldp:contains` relations. Notifications that are of LDP RDF Source should be
+instances of `solid:Notification`. Although neither `solid:Inbox` or
+`solid:Notification` is ultimately required to discover inboxes or
+notifications, it is good practice to instantiate resources for the purpose of
+data integrity and reuse. An example:
 
 ```
 <https://example.org/profile> solid:inbox <https://example.net/inbox/> .
+<https://example.net/inbox/> a solid:Inbox .
 <https://example.net/inbox/> ldp:contains <https://example.net/inbox/abc123> .
 <https://example.net/inbox/abc123> a solid:Notification .
 ```
@@ -57,9 +70,11 @@ reuse. An example:
 ## Notification integrity
 
 Adhering to the integrity rules of an inbox notification e.g., for the purpose
-of a verification criteria or discovery is further described in [Solid
-inbox](inbox.md#shapes-constraint), is the responsibility of applications which
-submit and verify them.
+of a verification criteria or discovery is the responsibility of applications
+which submit and verify them. An inbox may be accompanied with constraint
+information e.g., by employing the [Shapes Constraint
+Language](https://www.w3.org/TR/shacl/)(SHACL) or [Shape
+Expressions](https://www.w3.org/2001/sw/wiki/ShEx)(ShEx).
 
 
 ## Enrichment
@@ -71,12 +86,12 @@ be purposed towards the verification process as well as for displaying.
 
 ## Authorization
 
-The owner of the Solid inbox typically sets its ACL rules and
-thereby for the notifications it contains. For example, notifications may be set
-for public read and append so that applications can use a FYN approach to
-discover and display the contents of a notification, as well as submit new
-notifications. Further, the ACL settings for the inbox may determine which
-agents can send notifications.
+The owner of the Solid inbox typically sets its ACL rules and thereby for the
+notifications it contains. For example, notifications may be set for public read
+and append so that applications can use a FYN approach to discover and display
+the contents of a notification, as well as submit new notifications. Further,
+the ACL settings for the inbox may determine which agents can send
+notifications.
 
 
 ## Notification types
@@ -105,7 +120,8 @@ object of a triple is described with its own triple:
   rdf:object <http://example.net/article> .
 ```
 
-This approach is useful if there is a need to further extend the statement's description or refer to it as a whole.
+This approach is useful if there is a need to further extend the statement's
+description or refer to it as a whole.
 
 ### Qualified relations
 
