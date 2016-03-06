@@ -2,7 +2,7 @@
 
 Solid inboxes are repositories for incoming social interactions and data. A
 Solid inbox is an [LDP Container](https://www.w3.org/TR/ldp/#ldpc) for Solid
-[notification](notifications.md). A resource can have one or more inboxes in
+notifications. A resource can have one or more inboxes in
 order to facilitate different social interactions. For instance, user profile
 inboxes are typically intended to receive notifications like messages from other
 profiles, or application specific activities.
