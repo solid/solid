@@ -7,10 +7,10 @@ order to facilitate different social interactions. For instance, user profile
 inboxes are typically intended to receive notifications like messages from other
 profiles, or application specific activities.
 
-By default, Solid servers should create an inbox for new profiles, and have the
-profile point at the inbox. Alternatives types of inboxes e.g., for documents or
-data fragments, may be created at the discretion of applications taking user's
-preferences into account.
+By default, Solid servers should create an inbox if the account also creates an
+identity (i.e., a WebID profile). Alternative types of inboxes e.g., for
+documents or data fragments, may be created at the discretion of applications
+taking user's preferences into account.
 
 Solid notifications are intended to announce social interactions and data. A
 Solid notification is an [LDP Resource](https://www.w3.org/TR/ldp/#ldpr) which
