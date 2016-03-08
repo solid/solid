@@ -1,124 +1,154 @@
-# Solid application data discovery (Draft)
+# Solid Application Data Discovery
 
 The following describes application data discovery in the Solid framework
 using HTTP link following aka "follow your nose". This should not be
-confused with [application preferences/configuration discovery]
-(https://github.com/solid/solid/tree/master/proposals/app-discovery.md).
-
-## Starting point -- WebID
-
-### Fetching the Profile
-
-The public profile is what you get when you look up someone's WebID directly.
-Strip off any hash and local id (i.e. #me) part. For example:
-
-```
-https://example.databox.me/profile/card#me -> https://example.databox.me/profile/card
-```
-
-The starting point of Solid application data discovery is a user's
-[WebID](http://www.w3.org/2005/Incubator/webid/spec/identity/), which is a hash
-based URI, typically denoting a (FOAF) Agent. From this profile the user's
-storage can be found (discovery). The Profile typically contains public name
-and contact information about someone, and pointers to public data used by
-various apps.
-
-When an application dereferences the public profile, it should also fetch any
-
-* owl:sameAs
-* rdfs:seeAlso
-* space:preferencesFile
-
-links it finds in the public profile document. (one level deep)
-
-The preferencesFile is a private file that is linked from the main WebID
-profile, and contains miscellaneous data that does not belong in the public profile.
-In general, both the public profile and the preferencesFil will contain triples
-that share the same subject -- i.e the user's WebID.
-
-## Discoverability
-
-Once a complete view of the profile has been created, applications will follow
-links to discover where relevant data is located in order to read and write
-data there.
-
-### Type registry configuration
-
-The type registry is typically a document holding resources that register a
-specific resource type and map it to a location on the user's data space.
+confused with [Application Configuration
+Discovery](https://github.com/solid/solid/tree/master/proposals/app-discovery.md)
+or [Storage
+Discovery](https://github.com/solid/solid-spec/blob/master/solid-webid-profiles.md#storage-discovery).
 
 **Note:** The Type Registry is mainly intended as a Library discovery mechanism.
-Recommend that coarse-grained library types are registered (usually types that
-match containers as opposed to every RDF Class written by an app)
--- e.g. `vcard:AddressBook` and `sioc:Blog` as opposed to `vcard:Contact` and
-`sioc:Post`.
+We recommend that coarse-grained library types are registered (usually types
+that match containers as opposed to every RDF Class written by an app).
 
-A typical Solid account will have a private type index, where applications will
-register the top container type. For example, a contacts app will register the
-type `vcard:AddressBook` and the instance (or data location) as `/contacts/` in
-a new resource at `/settings/privateTypeIndex.ttl#ab09fd`.
+Specifically, the Type Registry provides a way for a client application to
+discover where a user keeps data relevant to this app, without either:
 
-If the user decides it wants to make public that she is using a certain
-application, it can indicate this  by registering the same type in a public
-index document at `/settings/publicTypeIndex.ttl#19da01`.
+a. Prompting the user to select the location of every relevant instance or
+  container, or
+b. Scanning through the entire dataspace/root storage of the user.
 
-Both registry documents will be linked to from the user's main profile (and from
-it, the preferences file):
+For example, when a user installs a new Contacts Manager app, the app does not
+need to scan all of the containers in a user's storage, looking for relevant
+Contacts or AddressBook resources. Instead, it can query the Type Index registry
+and discover only the resources and containers it cares about.
 
-In the public profile:
-```
-@prefix solid: <https://www.w3.org/ns/solid/terms#>.
+## Data Discovery Workflow
 
-...
+Solid client apps use the following workflow to discover where data resides in
+a user's dataspace:
 
-<#me>  solid:typeIndex  </settings/publicTypeIndex.ttl>.
-```
+1. Start with the [WebID URI](https://github.com/solid/solid-spec#identity).
+2. Use it to fetch the [WebID Profile
+  Document](https://github.com/solid/solid-spec#profiles).
+3. Parse the profile and load the other [Extended
+  Profile](https://github.com/solid/solid-spec/blob/master/solid-webid-profiles.md#extended-profile)
+  resources, which includes the Preferences file and any `owl:sameAs` and
+  `rdfs:seeAlso` links.
+4. From the Extended Profile, extract the registry links
+  (the `solid:publicTypeIndex` predicate link to the public Listed Type Index
+  registry, and the `solid:privateTypeIndex` predicate link to the private
+  Unlisted Type Index registry).
+5. Load one or both of the Type Index registry documents, as appropriate, and
+  query them for the location of RDF Types that the app cares about.
 
-In the preferencesFile:
+Example WebID Profile snippet, with links to both type index resources:
 
 ```
 @prefix solid: <https://www.w3.org/ns/solid/terms#>.
 # ...
-<#me>  solid:typeIndex  </settings/privateTypeIndex.ttl>.
+<#me>
+    a foaf:Person;
+    # Listed type index resource:
+    solid:publicTypeIndex </settings/publicTypeIndex.ttl> ;  
+    # Unlisted type index resource:
+    solid:privateTypeIndex </settings/privateTypeIndex.ttl> .
 ```
 
-The TypeIndex resource `/settings/privateTypeIndex.ttl` will contain links to
-resources or containers. For example:
+## Type Index Registry
+
+The Solid Type Index Registry consists of two Type Index resources, a
+Listed Type Index (publicly readable by default) and an Unlisted Type Index
+(readable by the owner only, by default). Each of those resources
+contains registry entries that map a specific resource type to a location in
+the user's data space.
+
+### Type Index Registrations
+
+The type index resources contain any number of statements of type
+`solid:TypeRegistration` which map RDF classes/types to their locations in a
+user's dataspace/root storage.
+
+The registration entries map a type to a location using one of two predicates:
+
+##### `solid:instance`
+maps a type to an individual Solid *resource*, typically an index or a directory listing resource such as an Address Book.
+
+##### `solid:instanceContainer`
+maps a type to a Solid *container* which the client would have to list to get
+the instances of that type.
+
+An example Listed Type Index resource might contain:
+
+```
+# Maps the type vcard:AddressBook to an index document
+<#ab09fd> a solid:TypeRegistration;
+    solid:forClass vcard:AddressBook;
+    solid:instance </contacts/myPublicAddressBook.ttl>.
+
+# Maps the type sioc:Post to a container
+<#ab09cc> a solid:TypeRegistration;
+    solid:forClass sioc:Post;
+    solid:instanceContainer </posts/>.
+```
+
+Changing the status of a registration (from a Listed index to an Unlisted or
+vise versa) involves *removing* that registration (typically via a SPARQL-based
+HTTP PATCH) from the one and *adding* it (also via a PATCH) to the other.
+
+### Listed Type Index
+
+The Listed Type Index is intended for registrations that are *discoverable by
+outside users and applications*. For example, think of a listed phone number in
+a public phonebook, which contains publicly-discoverable mappings of people's
+names to phone numbers and addresses.
+
+The Listed (public) Type Index has the following properties:
+
+* Is linked to from the WebID Profile using the `solid:publicTypeIndex`
+  predicate
+* Is created in `/settings/publicTypeIndex.ttl` by default
+* Has a public-readable ACL by default
+* Is of type `solid:ListedDocument`
+
+Example Listed Type Index resource containing one registration entry:
+
+```
+@prefix solid: <https://www.w3.org/ns/solid/terms#>.
+# ...
+<>
+    a solid:TypeIndex ;
+    a solid:ListedDocument.
+
+<#ab09fd> a solid:TypeRegistration;
+    solid:forClass vcard:AddressBook;
+    solid:instance </contacts/myPublicAddressBook.ttl>.
+```
+
+### Unlisted Type Index
+
+The Unlisted Type Index resource is intended for registrations that are private
+to the user and their apps, for types that are *not* publicly discoverable.
+
+The Unlisted (private) Type Index has the following properties:
+
+* Is typically linked to from the Preferences file (or some other private
+  section of an Extended Profile) using the `solid:privateTypeIndex` predicate
+* Is created in `/settings/privateTypeIndex.ttl` by default
+* Has a private ACL by default (readable only by the owner)
+* Is of type `solid:UnlistedDocument`
+
+Example Unlisted Type Index resource:
 
 ```
 @prefix solid: <https://www.w3.org/ns/solid/terms#>.
 @prefix sioc: <http://rdfs.org/sioc/ns#>.
-@prefix ldp: <http://www.w3.org/ns/ldp#>.
 # ...
-<#ab09fd> a solid:TypeRegistration;
-    solid:forClass vcard:AddressBook;
-    solid:instance </contacts/addressBook.ttl>.
+<>
+    a solid:TypeIndex ;
+    a solid:UnlistedDocument.
 
 <#ab09cc> a solid:TypeRegistration;
     solid:forClass sioc:Post;
-    ldp:BasicContainer </posts/>.
-```
-
-Optional:
-
-- An app may register a defaultApp URI when creating a data container.
-- When the user opens that container in the browser, a meshlib-like (thin)
-app can be loaded first, which in turns fetches the meta file and displays
-the registered app.
-
-
-### Storage Discovery
-
-* Starting Point: WebID
-* Type: [pim : storage](http://www.w3.org/ns/pim/space#storage)
-
-For example, for a given WebID (https://example.databox.me/card#me),
-the corresponding storage location URI is https://example.databox.me/.
-
-```
-@prefix space: <http://www.w3.org/ns/pim/space#> .
-
-...
-
-<#me> space:storage <.> .
+    solid:instanceContainer </personal-diary/>.
 ```
