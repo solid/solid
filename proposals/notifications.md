@@ -2,10 +2,10 @@
 
 Solid inboxes are repositories for incoming social interactions and data. A
 Solid inbox is an [LDP Container](https://www.w3.org/TR/ldp/#ldpc) for Solid
-notifications. A resource can have one or more inboxes in
-order to facilitate different social interactions. For instance, user profile
-inboxes are typically intended to receive notifications like messages from other
-profiles, or application specific activities.
+notifications. A resource can have one or more inboxes in order to facilitate
+different social interactions. For instance, user profile inboxes are typically
+intended to receive notifications like messages from other profiles, or
+application specific activities.
 
 By default, Solid servers should create an inbox if the account also creates an
 identity (i.e., a WebID profile). Alternative types of inboxes e.g., for
@@ -87,11 +87,12 @@ be purposed towards the verification process as well as for displaying.
 ## Authorization
 
 The owner of the Solid inbox typically sets its ACL rules and thereby for the
-notifications it contains. For example, notifications may be set for public read
-and append so that applications can use a FYN approach to discover and display
-the contents of a notification, as well as submit new notifications. Further,
-the ACL settings for the inbox may determine which agents can send
-notifications.
+notifications it contains. By default, when profile inboxes are created, inboxes
+must be public append only as they are inherently private. Other types of
+inboxes e.g., for blog posts, may be set to public read and append so that
+applications can use a *follow-your-nose* approach to discover and display the
+contents of a notification, as well as submit new notifications. Further, the
+ACL settings for the inbox may determine which agents can send notifications.
 
 
 ## Notification types
@@ -106,18 +107,6 @@ Alice liked an article:
 
 ```
 <http://example.org/profile/card#alice> :liked <http://example.net/article> .
-```
-
-### RDF Statements
-
-Making statements about statements; a statement in which each subject, property,
-object of a triple is described with its own triple:
-
-```
-<http://example.org/inbox/abc123> a solid:Notification , rdf:Statement ;
-  rdf:subject <http://example.org/profile/card#alice> ;
-  rdf:property :liked ;
-  rdf:object <http://example.net/article> .
 ```
 
 This approach is useful if there is a need to further extend the statement's
