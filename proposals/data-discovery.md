@@ -35,20 +35,22 @@ a user's dataspace:
   Profile](https://github.com/solid/solid-spec/blob/master/solid-webid-profiles.md#extended-profile)
   resources, which includes the Preferences file and any `owl:sameAs` and
   `rdfs:seeAlso` links.
-4. From the Extended Profile, extract the registry links
+4. From the Extended Profile [discover storage instances](https://github.com/solid/solid-spec/blob/master/solid-webid-profiles.md#storage-discovery)
+5. For each storage, extract the registry links
   (the `solid:publicTypeIndex` predicate link to the public Listed Type Index
   registry, and the `solid:privateTypeIndex` predicate link to the private
   Unlisted Type Index registry).
-5. Load one or both of the Type Index registry documents, as appropriate, and
+6. Load one or both of the Type Index registry documents, as appropriate, and
   query them for the location of RDF Types that the app cares about.
 
-Example WebID Profile snippet, with links to both type index resources:
+Example snippet from document describing a Storage, with links to both type index resources:
 
 ```ttl
 @prefix solid: <https://www.w3.org/ns/solid/terms#>.
+@prefix pim: <http://www.w3.org/ns/pim/space#>.
 # ...
-<#me>
-    a foaf:Person;
+<#storage>
+    a pim:Storage;
     # Listed type index resource:
     solid:publicTypeIndex </settings/publicTypeIndex.ttl> ;  
     # Unlisted type index resource:
