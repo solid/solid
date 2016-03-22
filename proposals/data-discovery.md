@@ -44,7 +44,7 @@ a user's dataspace:
 
 Example WebID Profile snippet, with links to both type index resources:
 
-```
+```ttl
 @prefix solid: <https://www.w3.org/ns/solid/terms#>.
 # ...
 <#me>
@@ -80,7 +80,7 @@ the instances of that type.
 
 An example Listed Type Index resource might contain:
 
-```
+```ttl
 # Maps the type vcard:AddressBook to an index document
 <#ab09fd> a solid:TypeRegistration;
     solid:forClass vcard:AddressBook;
@@ -113,7 +113,7 @@ The Listed (public) Type Index has the following properties:
 
 Example Listed Type Index resource containing one registration entry:
 
-```
+```ttl
 @prefix solid: <https://www.w3.org/ns/solid/terms#>.
 # ...
 <>
@@ -140,7 +140,7 @@ The Unlisted (private) Type Index has the following properties:
 
 Example Unlisted Type Index resource:
 
-```
+```ttl
 @prefix solid: <https://www.w3.org/ns/solid/terms#>.
 @prefix sioc: <http://rdfs.org/sioc/ns#>.
 # ...
