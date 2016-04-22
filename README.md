@@ -15,12 +15,12 @@ is modular and extensible. It relies as much as possible on existing
 ## Table of Contents
 
 1. [About Solid](#about-solid)
-2. [Contributing to Solid](#contributing-to-solid)
+2. [Standards Used](#standards-used)
+3. [Platform Notes](#platform-notes)
+4. [Project directory](#project-directory)
+5. [Contributing to Solid](#contributing-to-solid)
   * [Pre-Requisites](#pre-requisites)
   * [Solid Project Workflow](#solid-project-workflow)
-3. [Standards Used](#standards-used)
-4. [Platform Notes](#platform-notes)
-5. [Project directory](#project-directory)
 
 ## About Solid
 
@@ -50,48 +50,6 @@ Specifically, Solid is:
   [solid gitter channel](https://gitter.im/solid/solid)),
   [tutorials](https://github.com/solid/solid#tutorials) and
   [talks/presentations](https://github.com/solid/talks).
-
-## Contributing to Solid
-
-### Pre-Requisites
-
-In order to try out some of the apps built using Solid, you will need the
-following things:
-
-1. A WebID profile from one of the Solid-compliant
-  [identity providers](https://solid.github.io/solid-idps/), such as
-  [databox.me](https://databox.me/).
-
-2. A WebID browser certificate from the above profile (this is usually created
-  when you sign up for a WebID profile account).
-
-Additionally, to get started with developing for the Solid platform, you'll
-need:
-
-1. A Solid-compliant [server](https://github.com/solid/solid-platform#servers)
-
-2. While not required, an understanding of
-  RDF/[Turtle](http://www.w3.org/TR/turtle/) principles and
-  [Linked Data Platform](http://www.w3.org/TR/ldp-primer/) concepts will help
-  you understand the general workflow.
-
-### Solid Project Workflow
-
-To contribute to Solid development, and to bring up issues or feature requests,
-please use the following workflow:
-
-1. Have a question or a feature request or a concern about the Solid framework,
-  or on one of its servers? **Open an issue on
-  [solid/solid](https://github.com/solid)** (this repo here).
-
-2. Have an issue with the *Solid spec* specifically? **Open an issue on
-  [solid/solid](https://github.com/solid) anyway.** And then, as a result of
-  discussion, if it's agreed that it is actually a Spec issue, it will be moved
-  to `solid-spec`.
-
-3. The individual [solid/solid](https://github.com/solid) issues can coordinate
-  and track component/dependent issues on the various affected Solid servers,
-  apps, and so on.
 
 ## Standards Used
 
@@ -200,7 +158,6 @@ to each other through a shared filesystem, and the Web is that filesystem.
       a set of example apps built on the Solid platform using AngularJS.
     - [Working with RDF data](https://github.com/solid/solid-tutorial-rdflib.js) tutorial about using a library called [rdflib.js](https://github.com/linkeddata/rdflib.js)
 
-
 - Implementing
   - [Sign-up/Login application](https://github.com/solid/solid-signup)
   - [Solid Server Test suite](https://github.com/solid/solid-tests)
@@ -210,3 +167,45 @@ to each other through a shared filesystem, and the Web is that filesystem.
   - [Identity providers](https://github.com/solid/solid-idps)
   - [Applications](https://github.com/solid/solid-apps)
   - Join our conversations in our [gitter chat room](https://gitter.im/solid/chat)
+
+## Contributing to Solid
+
+### Pre-Requisites
+
+In order to try out some of the apps built using Solid, you will need the
+following things:
+
+1. A WebID profile from one of the Solid-compliant
+  [identity providers](https://solid.github.io/solid-idps/), such as
+  [databox.me](https://databox.me/).
+
+2. A WebID browser certificate from the above profile (this is usually created
+  when you sign up for a WebID profile account).
+
+Additionally, to get started with developing for the Solid platform, you'll
+need:
+
+1. A Solid-compliant [server](https://github.com/solid/solid-platform#servers)
+
+2. While not required, an understanding of
+  RDF/[Turtle](http://www.w3.org/TR/turtle/) principles and
+  [Linked Data Platform](http://www.w3.org/TR/ldp-primer/) concepts will help
+  you understand the general workflow.
+
+### Solid Project Workflow
+
+To contribute to Solid development, and to bring up issues or feature requests,
+please use the following workflow:
+
+1. Have a question or a feature request or a concern about the Solid framework,
+  or on one of its servers? **Open an issue on
+  [solid/solid](https://github.com/solid)** (this repo here).
+
+2. Have an issue with the *Solid spec* specifically? **Open an issue on
+  [solid/solid](https://github.com/solid) anyway.** And then, as a result of
+  discussion, if it's agreed that it is actually a Spec issue, it will be moved
+  to `solid-spec`.
+
+3. The individual [solid/solid](https://github.com/solid) issues can coordinate
+  and track component/dependent issues on the various affected Solid servers,
+  apps, and so on.
