@@ -7,7 +7,7 @@
 > Re-decentralizing the web
 
 Solid (derived from "**so**cial **li**nked **d**ata") is a proposed set of
-conventions and tools for building *decentralized social applications* based on
+conventions and tools for building *decentralized Web applications* based on
 [Linked Data](http://www.w3.org/DesignIssues/LinkedData.html) principles. Solid
 is modular and extensible. It relies as much as possible on existing
 [W3C](http://www.w3.org/) standards and protocols.
