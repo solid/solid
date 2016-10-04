@@ -14,7 +14,7 @@
 
 ## Introduction
 
-WebID-OIDC is a delegation authentication protocol (as well as a toolkit of
+WebID-OIDC is an authentication delegation protocol (as well as a toolkit of
 useful auth-related verification techniques) suitable for WebID-based
 decentralized systems such as [Solid](https://github.com/solid/solid), as well
 as most LDP-based systems.
@@ -44,7 +44,10 @@ Connect.
 * Fully decentralized cross-domain authentication
 * Builds on decades of real-world authentication industry experience.
 * Incorporates lessons from, and fixes to threat models of: SAML, OpenID and
-  OpenID 2, OAuth and OAuth 2.
+  OpenID 2, OAuth and OAuth 2. See, for example,
+  [RFC 6819 - OAuth 2.0 Threat Model and Security
+  Considerations](http://tools.ietf.org/html/rfc6819) -- OpenID Connect was
+  developed in large part to address the threats outlined there.
 * Sign Off (and Single Sign Off) capability
 * Capability for revocations, black lists and white lists
 * Supports authentication for the full range of agents and clients: in-browser
@@ -71,7 +74,7 @@ following:
 ### If You're Familiar with OAuth 2 or OpenID Connect
 
 WebID-OIDC makes the following enhancements to the base OpenID Connect protocol
-(which is itself based on OAuth 2):
+(which itself improves and builds on OAuth 2):
 
 * Discusses, formalizes and specifies the [Provider
   Selection](#21-provider-selection) step.
@@ -139,8 +142,9 @@ browser).
 ##### Identity Provider (OP)
 An OpenID Connect Identity `Provider` (called `OP` in most OIDC specs). Also
 sometimes referred to as `Issuer`. This can be either a POD (see below) or an
-external OIDC provider like Google. In the spec, Alice's POD, `alice.com`, will
-mostly play the role of a Provider.
+external OIDC provider such as
+[Google](https://developers.google.com/identity/protocols/OpenIDConnect). In
+the spec, Alice's POD, `alice.com`, will mostly play the role of a Provider.
 
 ##### Resource Server
 A server hosting resources that the user wants to access, such as HTML, images,
@@ -162,14 +166,18 @@ Incidentally, when Alice tries to access a resource on her *own* POD,
 Party (as well as the Resource Server).
 
 ##### POD
-A Personal Online Datastore (POD for short). Acts as a Resource Server, *and*
-as an Identity Provider, *and* as a Relying Party, depending on the use case.
+A Personal Online Datastore (POD for short). It plays several roles -- firstly,
+it stores a user's data (and so acts as a Resource Server). In many cases, it
+also hosts the user's WebID Profile, and implements the API endpoints that allow
+it to act as a WebID-OIDC Identity Provider (OP). Lastly, when users requests
+resources from it, the POD also acts as a Relying Party (a recipient of those
+users' ID Tokens).
 In this spec, `alice.com` and `bob.com` are both PODs.
 
 ##### Home POD vs Other POD
 A user's Home POD is one that hosts their WebID Profile, and also acts as that
 user's Identity Provider. We use the term *Other POD* in this spec to denote
-some other WebID+OIDC compliant POD, acting as a Resource Server and Relying
+some other WebID-OIDC compliant POD, acting as a Resource Server and Relying
 Party, that a user is trying to access using the WebID URI and Profile of their
 Home POD.
 
@@ -328,7 +336,7 @@ and so on). The contents of the ID Token's `webid` claim is Alice's WebID URI,
 **Step 1:** Look in the ID Token for the `webid` claim. This claim is added to
 the set of [OpenID Connect ID
 Token](https://openid.net/specs/openid-connect-core-1_0.html#IDToken) claims by
-this WebID+OIDC spec. (Note that the set of ID Token claims is extensible, by
+this WebID-OIDC spec. (Note that the set of ID Token claims is extensible, by
 design, as explained in the OIDC Core spec.) If the `webid` claim is present in
 the ID Token, its contents should be used as the WebID URI by the Relying Party,
 instead of the traditional `sub` (subject identifier) claim.
@@ -340,7 +348,7 @@ the appropriate Access Token that it received alongside the ID Token. This
 fallback procedure is provided for cases where users do not have control over
 the contents of the ID Tokens issued by their Providers and so would not be able
 to use the `webid` extension claim. This would be the case, for example, if a
-user wanted to sign in to a WebID+OIDC Relying Party using an existing
+user wanted to sign in to a WebID-OIDC Relying Party using an existing
 mainstream Provider such as Google. Once the UserInfo response is received by
 the Relying Party, the standard `website` claim should be used as the WebID URI
 by that RP.
