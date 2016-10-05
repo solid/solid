@@ -3,14 +3,13 @@
 ## Table of Contents
 
 * [Introduction](#introduction)
-  - [Motivation](#motivation)
+* [Motivation](#motivation)
   - [Benefits and Capabilities](#benefits-and-capabilities)
   - [If You're Familiar with WebID](#if-youre-familiar-with-webid)
   - [If You're Familiar with OAuth 2 or OpenID Connect](#if-youre-familiar-with-oauth-2-or-openid-connect)
 * [Brief Workflow Summary](#brief-workflow-summary)
 * [Decentralized Authentication Terminology](#decentralized-authentication-terminology)
 * [Detailed Sign In Workflow](#detailed-sign-in-workflow)
-* [Implementation Notes](#implementation-notes)
 
 ## Introduction
 
@@ -19,7 +18,7 @@ useful auth-related verification techniques) suitable for WebID-based
 decentralized systems such as [Solid](https://github.com/solid/solid), as well
 as most LDP-based systems.
 
-The end result of any WebID-based authentication workflow is a verified WebID
+The end result of any WebID authentication workflow is a verified WebID
 URI. For example,
 [WebID-TLS](https://github.com/solid/solid-spec/blob/master/authn-webid-tls.md)
 derives the WebID URI from a TLS certificate, and verifies the certificate
@@ -30,14 +29,70 @@ for getting a WebID URI from an OIDC ID Token, and gains the benefits of both
 the decentralized flexibility of WebID, and the field-proven security of OpenID
 Connect.
 
-### Motivation
+## Motivation
 
-* Trying to replace: User having to create an account on each Resource Server /
-  RP. HTTP Basic auth, Bearer tokens for auth.
-* Separates user authentication (using passwords, WebID-TLS browser-side certs,
-  WebAuthn devices, etc) and cross-domain auth delegation.
-* Other protocols considered but rejected: SAML, OpenID 1 & 2, OAuth 1 & 2,
-  IndieAuth, HTTP Signatures.
+The Solid team, while [researching additional authentication
+mechanisms](https://github.com/solid/solid/issues/22) to run alongside the
+existing one (WebID-TLS), performed a review of existing authentication
+protocols that has been used by (or proposed for) decentralized application
+ecosystems. Several criteria were kept in mind.
+
+One, we wanted to avoid the common pitfalls that are often encountered
+when dealing with authentication for decentralized systems: the use of HTTP
+Basic or Digest Auth, and relying on Bearer Tokens as an authentication
+mechanism.
+
+Secondly, we were looking for a protocol that did not rely solely on identifying
+users via public/private crypto keys. Aside from the general difficulty people
+have with storing and managing crypto keys, public client applications (browser
+side Javascript apps, for example) do not have access to private key storage
+facilities or keychain APIs. (And even the upcoming WebAuthn spec requires the
+user to *register* an account for each domain -- precisely the situation that
+most decentralized social app projects like Solid are trying to fix.) This
+ruled out proposals such as HTTP Signatures, most "Identity on the Blockchain"
+proposals including Bitcoin, and other client-side key management based systems.
+
+If at all possible, we were looking for protocols that used standards and tech
+stacks that were familiar and comprehensible to app developers (which ruled out
+the XML-based and enterprise-heavy SAML, as well as earlier incarnations of
+OpenID).
+
+Other properties that we were looking for in a protocol included:
+
+* Support for the full range of app and agent types, including browser side
+  Javascript apps, traditional server-side web apps, mobile apps and desktop
+  apps, and so on.
+* Was well-spec'd and widely deployed
+* Addressed and incorporated security best practices and recommendations (see,
+  for example [RFC 4962](https://tools.ietf.org/html/rfc4962) and
+  [RFC 6819](http://tools.ietf.org/html/rfc6819)), such as fresh strong session
+  keys, cryptographic algorithm independence, authentication of all parties
+  involved (user, client app, server, etc), and proof against common attacks
+  (replay attacks, man-in-the-middle, token hijacking and many others).
+* Provided a familiar end-user experience
+* Was usable on public or shared computers (had reasonable sign-out
+  capabilities, etc)
+* Was compatible with the other complementary Solid specs (such as the Web
+  Access Control authorization system)
+* Had support for down-the-road capability requirements, such as access
+  revocation, blacklists and whitelists for both apps and service providers,
+  the possibility of confidentiality, pre-authorized "unattended" access, and
+  so on.
+
+### Why OpenID Connect
+
+We have found OpenID Connect the only protocol that fit all of those
+requirements (or even came close). At its heart, OIDC is a general purpose
+toolkit for authentication and delegation, with provisions and specifications
+for:
+
+- User authentication via methods both familiar (such as username and password,
+  WebID-TLS browser side certificates) and upcoming (such as the FIDO 2/
+  WebAuthn standard)
+- Verification of identity providers
+- Verification of client applications of all types (browser side,
+  server side, desktop and mobile, etc)
+- Session expiration
 
 ### Benefits and Capabilities
 
@@ -48,6 +103,12 @@ Connect.
   [RFC 6819 - OAuth 2.0 Threat Model and Security
   Considerations](http://tools.ietf.org/html/rfc6819) -- OpenID Connect was
   developed in large part to address the threats outlined there.
+* Stands on the shoulders of giants (makes use of the JOSE suite of standards
+  for token representation, cryptographic signing and encryption,
+  including [JWT](https://tools.ietf.org/html/rfc7519),
+  [JWA](https://tools.ietf.org/html/rfc7518),
+  [JWE](https://tools.ietf.org/html/rfc7516) and
+  [JWS](https://tools.ietf.org/html/rfc7515))
 * Sign Off (and Single Sign Off) capability
 * Capability for revocations, black lists and white lists
 * Supports authentication for the full range of agents and clients: in-browser
@@ -55,6 +116,7 @@ Connect.
   and IoT devices.
 * Drop-in compatibility with existing Web Access Control ACL implementations
   such as those in Solid servers.
+* Sets up the infrastructure for adding Capabilities functionality to Solid
 
 ### If You're Familiar with WebID
 
@@ -131,8 +193,8 @@ specs.
 
 ##### User
 Human user. If the user is an app or service (that has its own WebID Profile),
-this can be generalized to Agent. Also called Resource Owner. In the following
-examples, Alice and Bob are Users.
+this can be generalized to `Agent`. Also called `Resource Owner`. In the
+following examples, Alice and Bob are Users.
 
 ##### User-Agent
 A formal name for a `Browser`. Note that this is often separate from a Client
@@ -208,7 +270,7 @@ they are requesting.
 #### 1a. Direct Browser Request
 
 *Example 1:* Alice types in `https://bob.com/images/image1.png` into her
-browser's address bar.
+browser's address bar (or follows a link to it).
 
 *Example 1:* `bob.com` responds with a `401 Unauthorized` response, with HTML in
 the body that says something like "Welcome to Bob.com. Please enter your email
@@ -356,5 +418,3 @@ by that RP.
 (**Optimization**) The Relying Party may choose to establish a user session
 (via a browser cookie), so that the user can skip Steps 1-5 in subsequent
 interactions (until the session expires or the user signs out).
-
-## Implementation Notes
