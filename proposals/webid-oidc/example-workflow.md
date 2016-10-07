@@ -126,7 +126,11 @@ the previous Dynamic Registration step. So, Alice's browser gets redirected
 to `https://bob.com/auth-response` (which is the URI Bob's POD uses as an OIDC
 `redirect_uri` endpoint).
 
-### 6. Deriving a WebID URI from an OIDC ID Token
+(**Optimization**) The Relying Party may choose to establish a user session
+(via a browser cookie), so that the user can skip Steps 1-5 in subsequent
+interactions (until the session expires or the user signs out).
+
+### 6. Deriving a WebID URI
 *Example 1:* At this point, Alice is back to the original resource she was
 trying to request. As part of the Authentication Response from `alice.com`,
 the Relying Party `bob.com` has received an ID token that contains, among
@@ -135,26 +139,4 @@ sure it has not expired, that the signature matches `alice.com`'s public key,
 and so on). The contents of the ID Token's `webid` claim is Alice's WebID URI,
 `https://alice.com/#i`.
 
-**Step 1:** Look in the ID Token for the `webid` claim. This claim is added to
-the set of [OpenID Connect ID
-Token](https://openid.net/specs/openid-connect-core-1_0.html#IDToken) claims by
-this WebID-OIDC spec. (Note that the set of ID Token claims is extensible, by
-design, as explained in the OIDC Core spec.) If the `webid` claim is present in
-the ID Token, its contents should be used as the WebID URI by the Relying Party,
-instead of the traditional `sub` (subject identifier) claim.
-
-**Step 2 (Optional):** If the `webid` claim is not present in the ID Token, the
-Relying Party should proceed to make an OIDC [UserInfo
-Request](https://openid.net/specs/openid-connect-core-1_0.html#UserInfo), with
-the appropriate Access Token that it received alongside the ID Token. This
-fallback procedure is provided for cases where users do not have control over
-the contents of the ID Tokens issued by their Providers and so would not be able
-to use the `webid` extension claim. This would be the case, for example, if a
-user wanted to sign in to a WebID-OIDC Relying Party using an existing
-mainstream Provider such as Google. Once the UserInfo response is received by
-the Relying Party, the standard `website` claim should be used as the WebID URI
-by that RP.
-
-(**Optimization**) The Relying Party may choose to establish a user session
-(via a browser cookie), so that the user can skip Steps 1-5 in subsequent
-interactions (until the session expires or the user signs out).
+### 7. WebID Provider Confirmation
