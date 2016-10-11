@@ -8,8 +8,8 @@
   - [If You're Unfamiliar with OIDC](#if-youre-unfamiliar-with-oidc)
 * [Differences from Classic OpenID Connect](#differences-from-classic-openid-connect)
 * [Brief Workflow Summary](#brief-workflow-summary)
-* [Enhancement: Add `webid` Claim to ID Token]()
-* [Enhancement: WebID Provider Confirmation]()
+* [Enhancement: Add `webid` Claim to ID Token](#enhancement-add-webid-claim-to-id-token)
+* [Enhancement: WebID Provider Confirmation](#enhancement-webid-provider-confirmation)
 * [Detailed Sign In Workflow Example](#detailed-sign-in-workflow-example)
 
 ## Introduction
@@ -139,13 +139,14 @@ WebID-OIDC makes the following enhancements to the base OpenID Connect protocol
 
 * Discusses and formalizes the [Provider Selection](#21-provider-selection)
   step.
-* Adds an [new `webid` claim]() to the ID Token format. This will contain
+* Adds an [new `webid` claim](#enhancement-add-webid-claim-to-id-token) to the
+  ID Token format. This will contain
   the WebID URI, a globally unique user id (which also happens to yield a
   useful user profile when dereferenced). This claim, instead of the
   traditional `sub`ject claim, will be used by the recipient to uniquely
   identify the user. (The spec also has fallback provisions for situations
   where adding a claim to the ID Token is impossible.)
-* Adds an additional step: [WebID Provider Confirmation]().
+* Adds an additional step: [WebID Provider Confirmation](#enhancement-webid-provider-confirmation).
   After the WebID URI is extracted, the recipient of the ID Token must confirm
   that the Provider was indeed authorized by the holder of the WebID profile.
 
@@ -175,12 +176,12 @@ For example, here is what happens when Alice tries to request the resource
    resource she was originally trying to request). The server, `bob.com`, also
    receives a signed ID Token from `alice.databox.me`, attesting that she has
    signed in.
-6. [Deriving a WebID URI]():
+6. [Deriving a WebID URI](#enhancement-add-webid-claim-to-id-token):
    `bob.com` (the server controlling the resource) validates the ID Token, and
    extracts Alice's WebID URI (see the `webid` claim section below) from
    inside  it. She is now signed in to `bob.com` as user
    `https://alice.databox.me/#i`.
-7. [WebID Provider Confirmation]():
+7. [WebID Provider Confirmation](#enhancement-webid-provider-confirmation):
    `bob.com` makes an HTTP request to Alice's WebID URI,
    `https://alice.databox.me/` and *confirms* (via parsing the `oidc` link
    header relation) that Databox is indeed Alice's Provider of choice.
