@@ -137,7 +137,7 @@ following:
 WebID-OIDC makes the following enhancements to the base OpenID Connect protocol
 (which itself improves and builds on OAuth 2):
 
-* Discusses and formalizes the [Provider Selection](#21-provider-selection)
+* Discusses and formalizes the [Provider Selection](example-workflow.md#21-provider-selection)
   step.
 * Adds an [new `webid` claim](#enhancement-add-webid-claim-to-id-token) to the
   ID Token format. This will contain
