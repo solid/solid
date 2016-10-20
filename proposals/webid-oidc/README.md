@@ -190,8 +190,8 @@ For example, here is what happens when Alice tries to request the resource
 There is a lot of heavy lifting happening under the hood, performed by
 `bob.com` and `alice.databox.me`, the two servers involved in this exchange.
 They establish a trust relationship with each other (via
-[Discovery](#22-provider-discovery), and
-[Dynamic Registration](#23-dynamic-client-registration-first-time-only)), they
+[Discovery](example-workflow.md#22-provider-discovery), and
+[Dynamic Registration](example-workflow.md#23-dynamic-client-registration-first-time-only)), they
 verify each other's signatures against their public keys, and verify Alice's
 client app (if she's using one). Fortunately, all of that complexity is hidden
 from the user (and most of it is also hidden from the app developer).
