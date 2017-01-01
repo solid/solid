@@ -9,13 +9,24 @@ Proposed standard for interoperability of client systems in a solid system.
 
 Status: Document practice in the Contact pane, contact exporter, etc
 
+### This is an RDF footprint
+
+Note this a "footprint", which defines both the RDF graphs stored, and also what URLS are generated and which
+statements are in which web resource (file).    The idea of linked data is that the reader can "follow its nose" and will find the
+necessary files just by lookup up those of books, groups, people and so on which it already knows about, and following linked in the RDF returned.
+When *reading* the data, the "follow your nose" principle must be used, and the reader must not assume that the files will in fact have particular URLs.
+
+When *writing* new data, however, the client must adhere to the footprint, so that clients together write data in an orderly manageable way.
+
+It may be that it is convenient at times to make read-only datasets which adhere only to the graph, and not to the footprint.  Clients which use that data should work fine.
+
 * * *
 
 ### The URIs generated
 
 Suppose an addressbook is stored using VCARD repository at a base URI $b.
 
-The book itself has uri `$b/book.ttl#this`
+The book itself has uri `$b/index.ttl#this`
 
 A group with cleaned-up name (spaces converted to _ and multiple __ reduced to one) $n has URI $b/Group/$n/index.ttl#this
 
