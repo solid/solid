@@ -1,5 +1,8 @@
 # Solid inboxes and notifications
 
+**Note:** The main notification spec has moved to:
+https://www.w3.org/TR/ldn/
+
 Solid inboxes are repositories for incoming social interactions and data. A
 Solid inbox is an [LDP Container](https://www.w3.org/TR/ldp/#ldpc) for Solid
 notifications. A resource can have one or more inboxes in order to facilitate
