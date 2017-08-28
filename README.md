@@ -47,7 +47,7 @@ Specifically, Solid is:
   libraries (such as [solid.js](https://github.com/solid/solid.js)) that run on
   the Solid platform.
 * A community providing documentation, discussion (see the
-  [solid gitter channel](https://gitter.im/solid/solid)),
+  [solid gitter channel](https://gitter.im/solid/chat)),
   [tutorials](https://github.com/solid/solid#tutorials) and
   [talks/presentations](https://github.com/solid/talks).
 
