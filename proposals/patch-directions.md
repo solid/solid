@@ -22,7 +22,7 @@ Reasonable future features for the patch distribution system include:
  * When receiving a stream of updates, the server could cache the graph in memory, not reading it again from the file system
  * Further the server doesn't write back the patched file every patch, only every few seconds.
 
- Longer term ideas, larger projects:
+Longer term ideas, larger projects:
 
  * When clients of listening to the same resource are in fact located physically close,
  they could exchange patches through other medium like wifi or bluetooth.
