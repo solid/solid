@@ -170,17 +170,29 @@ to each other through a shared filesystem, and the Web is that filesystem.
 
 ## Contributing to Solid
 
-### Pre-Requisites
 
-In order to try out some of the apps built using Solid, you will need the
-following things:
+### Get a WebID
+
+In order to try out some of the apps built using Solid, you will need typically the
+a identity on some solid server. There are two forms of authentication we use, and so two types of account.
+
+#### Webid-OIDC
+
+This use OpenID Connect to give you a web ID. In involves siging in with a passrot at yoyr chosen
+identity provider, such as (2018/2)  [solid.community](https://solid.community/), or
+  or [soldtest.space](https://solidtest.space/). 
+
+#### WebID_TLS
+
 
 1. A WebID profile from one of the Solid-compliant
   [identity providers](https://solid.github.io/solid-idps/), such as
-  [databox.me](https://databox.me/).
+  [databox.me](https://databox.me/),  
 
-2. A WebID browser certificate from the above profile (this is usually created
-  when you sign up for a WebID profile account).
+With WebID-TLS, you will need to make a WebID browser certificate from the above profile (this is usually created
+when you sign up for a WebID profile account, but it only works on Firefox at the moment(2018)).
+
+### Running a server
 
 Additionally, to get started with developing for the Solid platform, you'll
 need:
@@ -199,13 +211,19 @@ please use the following workflow:
 
 1. Have a question or a feature request or a concern about the Solid framework,
   or on one of its servers? **Open an issue on
-  [solid/solid](https://github.com/solid)** (this repo here).
+  [solid/solid](https://github.com/solid/solid)** (this repo here).
 
 2. Have an issue with the *Solid spec* specifically? **Open an issue on
-  [solid/solid](https://github.com/solid) anyway.** And then, as a result of
+  [solid/solid](https://github.com/solid/solid) anyway.** And then, as a result of
   discussion, if it's agreed that it is actually a Spec issue, it will be moved
   to `solid-spec`.
 
 3. The individual [solid/solid](https://github.com/solid) issues can coordinate
   and track component/dependent issues on the various affected Solid servers,
   apps, and so on.
+  
+ ## Places to chat
+ 
+We use gitter.im. There is a general chat [solid/chat](https://gitter.im/solid/chat) as well as speific chats about specific products such as [node-solid-server](ttps://gitter.im/solid/node-solid-server)
+ 
+ 
