@@ -224,6 +224,6 @@ please use the following workflow:
   
  ## Places to chat
  
-We use gitter.im. There is a general chat [solid/chat](https://gitter.im/solid/chat) as well as speific chats about specific products such as [node-solid-server](ttps://gitter.im/solid/node-solid-server)
+We use gitter.im. There is a general chat [solid/chat](https://gitter.im/solid/chat) as well as speific chats about specific products such as [node-solid-server](https://gitter.im/solid/node-solid-server)
  
  
