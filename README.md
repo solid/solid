@@ -176,14 +176,13 @@ to each other through a shared filesystem, and the Web is that filesystem.
 In order to try out some of the apps built using Solid, you will need typically the
 a identity on some solid server. There are two forms of authentication we use, and so two types of account.
 
-#### Webid-OIDC
+#### WebID-OIDC
 
-This use OpenID Connect to give you a web ID. In involves siging in with a passrot at yoyr chosen
-identity provider, such as (2018/2)  [solid.community](https://solid.community/), or
+This uses OpenID Connect to give you a WebID. It involves signing in with a password at your chosen
+identity provider, such as (2018/2)  [solid.community](https://solid.community/),
   or [soldtest.space](https://solidtest.space/). 
 
 #### WebID_TLS
-
 
 1. A WebID profile from one of the Solid-compliant
   [identity providers](https://solid.github.io/solid-idps/), such as
