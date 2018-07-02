@@ -168,28 +168,25 @@ to each other through a shared filesystem, and the Web is that filesystem.
   - [Applications](https://github.com/solid/solid-apps)
   - Join our conversations in our [gitter chat room](https://gitter.im/solid/chat)
 
-## Contributing to Solid
 
+## Contributing to Solid
 
 ### Get a WebID
 
-In order to try out some of the apps built using Solid, you will need typically the
-a identity on some solid server. There are two forms of authentication we use, and so two types of account.
+In order to try out some of the apps built using Solid, you will need typically an identity on some solid server.
+There are two forms of authentication we use, and so two types of account.
 
 #### WebID-OIDC
 
 This uses OpenID Connect to give you a WebID. It involves signing in with a password at your chosen
-identity provider, such as (2018/2)  [solid.community](https://solid.community/),
-  or [soldtest.space](https://solidtest.space/). 
+identity provider, such as (2018/2) [solid.community](https://solid.community/), or [solidtest.space](https://solidtest.space/). 
 
 #### WebID_TLS
 
-1. A WebID profile from one of the Solid-compliant
-  [identity providers](https://solid.github.io/solid-idps/), such as
-  [databox.me](https://databox.me/),  
+A WebID profile from one of the Solid-compliant [identity providers](https://solid.github.io/solid-idps/), such as [databox.me](https://databox.me/),  
 
 With WebID-TLS, you will need to make a WebID browser certificate from the above profile (this is usually created
-when you sign up for a WebID profile account, but it only works on Firefox at the moment(2018)).
+when you sign up for a WebID profile account, but it only works on Firefox at the moment (2018)).
 
 ### Running a server
 
@@ -221,8 +218,8 @@ please use the following workflow:
   and track component/dependent issues on the various affected Solid servers,
   apps, and so on.
   
- ## Places to chat
+## Places to chat
  
-We use gitter.im. There is a general chat [solid/chat](https://gitter.im/solid/chat) as well as speific chats about specific products such as [node-solid-server](https://gitter.im/solid/node-solid-server)
+We use gitter.im. There is a general chat [solid/chat](https://gitter.im/solid/chat) as well as specific chats about specific products such as [node-solid-server](https://gitter.im/solid/node-solid-server)
  
  

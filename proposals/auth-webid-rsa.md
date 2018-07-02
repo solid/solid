@@ -35,7 +35,7 @@ must be `base64` encoded.
 
 It is important that clients return the proper source value they received from
 the server, in order to avoid man-in-the-middle attacks. Also note that the
-server must send it's own URI (**source**) together with the token, otherwise a
+server must send its own URI (**source**) together with the token, otherwise a
 [MitM](https://en.wikipedia.org/wiki/Man-in-the-middle_attack) can forward the
 claim to the client; the server will also expect that clients return the same
 server URI.
