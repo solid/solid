@@ -44,7 +44,7 @@ Specifically, Solid is:
   Solid implementations.
 * An ecosystem of [social apps](https://github.com/solid/solid-apps),
   [identity providers](https://github.com/solid/solid-idp-list) and helper
-  libraries (such as [solid.js](https://github.com/solid/solid.js)) that run on
+  libraries (such as [solid-auth-client](https://github.com/solid/solid-auth-client)) that run on
   the Solid platform.
 * A community providing documentation, discussion (see the
   [solid gitter channel](https://gitter.im/solid/chat)),
@@ -153,7 +153,7 @@ to each other through a shared filesystem, and the Web is that filesystem.
   - Tutorials
     - [Intro to Solid Tutorial](https://github.com/solid/solid-tutorial-intro)
       introductory Solid tutorial using the
-      [solid.js](https://github.com/solid/solid.js) library
+      [solid-auth-client](https://github.com/solid/solid-auth-client) library
     - [Solid Angular Apps Tutorial](https://github.com/solid/solid-tutorial-angular):
       a set of example apps built on the Solid platform using AngularJS.
     - [Working with RDF data](https://github.com/solid/solid-tutorial-rdflib.js) tutorial about using a library called [rdflib.js](https://github.com/linkeddata/rdflib.js)
