@@ -93,7 +93,7 @@ The Solid platform uses the following standards.
 * In Solid, certificate creation is typically done in the browser using the
   HTML5 [keygen
   element](http://www.w3.org/TR/html5/forms.html#the-keygen-element),
-  to provide a one-step creation and certificate publication user experience.
+  to provide an one-step creation and certificate publication user experience.
 
 * Authorization and access lists are done using
   [Basic Access Control ontology](http://www.w3.org/ns/auth/acl) (see also the
