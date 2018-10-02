@@ -160,7 +160,7 @@ to each other through a shared filesystem, and the Web is that filesystem.
 
 - Implementing
   - [Sign-up/Login application](https://github.com/solid/solid-signup)
-  - [Solid Server Test suite](https://github.com/solid/solid-tests)
+  - Solid Server Test suite
 
 - Community
   - [Server implementations](https://github.com/solid/solid-platform)
