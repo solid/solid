@@ -93,7 +93,7 @@ An example Listed Type Index resource might contain:
 ```
 
 Changing the status of a registration (from a Listed index to an Unlisted or
-vise versa) involves *removing* that registration (typically via a SPARQL-based
+vice versa) involves *removing* that registration (typically via a SPARQL-based
 HTTP PATCH) from the one and *adding* it (also via a PATCH) to the other.
 
 ### Listed Type Index
