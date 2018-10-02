@@ -75,7 +75,7 @@ The Solid platform uses the following standards.
   documents (in Turtle and other RDF formats).
 
 * The [FOAF vocabulary](http://xmlns.com/foaf/0.1/) is used both in WebID
-  profiles, and in specifying Access Control lists (see below).
+  profiles, and specifying Access Control lists (see below).
 
 * Authentication (for logins, page personalization and more) is done via the
   [WebID-TLS protocol](http://www.w3.org/2005/Incubator/webid/spec/tls/).
@@ -127,7 +127,7 @@ to each other through a shared filesystem, and the Web is that filesystem.
   following links. A GET on the container returns an enumeration of the items in
   the container.
 
-3. Servers are application-agnostic, so that new applications can be developed
+3. Servers are application-agnostic so that new applications can be developed
   without needing to modify servers. For example, even though the [LDP
   1.0](http://www.w3.org/TR/ldp/) specs contains nothing specific to
   "social", many of the [W3C Social Work Group](http://www.w3.org/Social/WG)'s
