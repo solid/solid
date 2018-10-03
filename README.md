@@ -22,7 +22,7 @@ is modular and extensible. It relies as much as possible on existing
   * [Pre-Requisites](#pre-requisites)
   * [Solid Project Workflow](#solid-project-workflow)
 
-## About Solid
+## About Solid ...
 
 Specifically, Solid is:
 
