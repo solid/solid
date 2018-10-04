@@ -28,7 +28,7 @@ When an application dereferences the public profile, it should also fetch any
 * rdfs:seeAlso
 * space:preferencesFile
 
-links it finds in the public profile document. (one level deep)
+links it finds in the public profile document (one level deep).
 
 The preferencesFile is a private file that is linked from the main WebID
 profile, and contains miscellaneous data not in your public profile. In
