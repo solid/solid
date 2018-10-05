@@ -218,7 +218,7 @@ please use the following workflow:
   and track component/dependent issues on the various affected Solid servers,
   apps, and so on.
   
-## Places to chat
+## Places to chat for developers
  
 We use gitter.im. There is a general chat [solid/chat](https://gitter.im/solid/chat) as well as specific chats about specific products such as [node-solid-server](https://gitter.im/solid/node-solid-server)
  
