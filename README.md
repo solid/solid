@@ -193,7 +193,7 @@ when you sign up for a WebID profile account, but it only works on Firefox at th
 Additionally, to get started with developing for the Solid platform, you'll
 need:
 
-1. A Solid-compliant [server](https://github.com/solid/solid-platform#servers)
+1. A Solid-compliant [server](https://github.com/solid/solid-platform#servers).
 
 2. While not required, an understanding of
   RDF/[Turtle](http://www.w3.org/TR/turtle/) principles and
