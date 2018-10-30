@@ -183,8 +183,6 @@ identity provider, such as (2018/2) [solid.community](https://solid.community/),
 
 #### WebID_TLS
 
-WebID-TLS currently only works in Firefox at the moment (Oct 2018)
-
 To use WebID-TLS, you will need to make a WebID browser certificate from one of the Solid-compliant [identity providers](https://solid.github.io/solid-idps/) - this is usually created when you sign up for a WebID profile account.
 
 ### Running a server
