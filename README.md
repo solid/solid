@@ -40,8 +40,6 @@ Specifically, Solid is:
   intended as a guide for developers who plan to build servers or applications.
 * A set of [servers](https://github.com/solid/solid-platform#servers) that
   implement this specification.
-* A [test suite](https://github.com/solid/solid-tests) for testing and validating
-  Solid implementations.
 * An ecosystem of [social apps](https://github.com/solid/solid-apps),
   [identity providers](https://github.com/solid/solid-idp-list) and helper
   libraries (such as [solid-auth-client](https://github.com/solid/solid-auth-client)) that run on
