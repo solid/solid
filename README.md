@@ -218,6 +218,6 @@ please use the following workflow:
   
 ## Places to chat
  
-We use gitter.im. There is a general chat [solid/chat](https://gitter.im/solid/chat) as well as specific chats about specific products such as [node-solid-server](https://gitter.im/solid/node-solid-server).
+We use Discourse. There is a place to introduce yourself and get to know others (https://forum.solidproject.org/t/welcome-to-the-solid-forum-please-introduce-yourself-here-great-to-have-you-on-board/440/20), a general chat(https://forum.solidproject.org/t/simply-chat-a-place-for-light-hearted-quick-questions-and-comments/441/3), and a place to talk about your idea to get feedback and find out about others working on similar ideas (https://forum.solidproject.org/c/app-communities).
  
  
