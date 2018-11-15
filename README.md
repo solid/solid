@@ -218,6 +218,6 @@ please use the following workflow:
   
 ## Places to chat
  
-We use Discourse. There is a place to introduce yourself and get to know others (https://forum.solidproject.org/t/welcome-to-the-solid-forum-please-introduce-yourself-here-great-to-have-you-on-board/440/20), a general chat(https://forum.solidproject.org/t/simply-chat-a-place-for-light-hearted-quick-questions-and-comments/441/3), and a place to talk about your idea to get feedback and find out about others working on similar ideas (https://forum.solidproject.org/c/app-communities).
- 
- 
+Solid uses [Discourse] (https://forum.solidproject.org), [Reddit](https://www.reddit.com/r/SOLID/), and [Gitter] (https://gitter.im/home/explore).  
+
+If you are just getting started with Solid [this Discourse thread] (https://forum.solidproject.org/t/welcome-to-the-solid-forum-please-introduce-yourself-here-great-to-have-you-on-board/440/20) is a good place to introduce yourself and meet others.
