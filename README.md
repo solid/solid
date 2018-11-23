@@ -220,4 +220,28 @@ please use the following workflow:
  
 We use Discourse. There is a place to introduce yourself and get to know others (https://forum.solidproject.org/t/welcome-to-the-solid-forum-please-introduce-yourself-here-great-to-have-you-on-board/440/20), a general chat(https://forum.solidproject.org/t/simply-chat-a-place-for-light-hearted-quick-questions-and-comments/441/3), and a place to talk about your idea to get feedback and find out about others working on similar ideas (https://forum.solidproject.org/c/app-communities).
  
+## 1 poem to sing
+
+我看到了我的爱恋
+I see my love;
+我飞到她的身边
+I fly next to her;
+我棒出给她的礼物
+I present her with my gift,
+那是一小块凝固的时间
+A small pice of solidified time,
+时间上有美丽的条纹
+Lovely markings are carved into time,
+摸起来像浅海的泥一样柔软
+As soft to the touch as the mud in shallow sea.
+她把时间涂满全身
+She covers her body with time,
+然后拉起我飞向存在的边缘
+And pulls me along to fly to the edge of existence.
+这是灵态的飞行
+This is a spiritual flight:
+我们眼中的星星像幽灵
+In our eyes, the stars appear as ghosts;
+星星眼中的我们也像幽灵
+In the eyes of the stars, we appear as ghosts.
  
