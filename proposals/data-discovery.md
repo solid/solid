@@ -45,7 +45,7 @@ a user's dataspace:
 Example WebID Profile snippet, with links to both type index resources:
 
 ```ttl
-@prefix solid: <https://www.w3.org/ns/solid/terms#>.
+@prefix solid: <http://www.w3.org/ns/solid/terms#>.
 # ...
 <#me>
     a foaf:Person;
@@ -141,7 +141,7 @@ The Unlisted (private) Type Index has the following properties:
 Example Unlisted Type Index resource:
 
 ```ttl
-@prefix solid: <https://www.w3.org/ns/solid/terms#>.
+@prefix solid: <http://www.w3.org/ns/solid/terms#>.
 @prefix sioc: <http://rdfs.org/sioc/ns#>.
 # ...
 <>
