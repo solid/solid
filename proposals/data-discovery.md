@@ -114,7 +114,7 @@ The Listed (public) Type Index has the following properties:
 Example Listed Type Index resource containing one registration entry:
 
 ```ttl
-@prefix solid: <https://www.w3.org/ns/solid/terms#>.
+@prefix solid: <http://www.w3.org/ns/solid/terms#>.
 # ...
 <>
     a solid:TypeIndex ;
