@@ -12,6 +12,8 @@ conventions and tools for building *decentralized Web applications* based on
 is modular and extensible. It relies as much as possible on existing
 [W3C](http://www.w3.org/) standards and protocols.
 
+Solid is made possible by a community of [contributors](https://github.com/solid/solid/blob/master/CONTRIBUTORS.md).
+
 ## Table of Contents
 
 1. [About Solid](#about-solid)
