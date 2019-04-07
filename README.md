@@ -16,13 +16,21 @@ Solid is made possible by a community of [contributors](https://github.com/solid
 
 ## Table of Contents
 
-1. [About Solid](#about-solid)
-2. [Standards Used](#standards-used)
-3. [Platform Notes](#platform-notes)
-4. [Project directory](#project-directory)
-5. [Contributing to Solid](#contributing-to-solid)
-  * [Pre-Requisites](#pre-requisites)
-  * [Solid Project Workflow](#solid-project-workflow)
+- [Solid](#solid)
+  - [Table of Contents](#table-of-contents)
+  - [About Solid](#about-solid)
+  - [Standards Used](#standards-used)
+  - [Solid Platform Notes](#solid-platform-notes)
+  - [Project directory](#project-directory)
+  - [Contributing to Solid](#contributing-to-solid)
+    - [Get a WebID](#get-a-webid)
+      - [WebID-OIDC](#webid-oidc)
+      - [WebID_TLS](#webid_tls)
+    - [Running a server](#running-a-server)
+    - [Solid Project Workflow](#solid-project-workflow)
+  - [Places to chat](#places-to-chat)
+      - [1. Solid Forum](#1-solid-forum)
+      - [2. Solid Chat](#2-solid-chat)
 
 ## About Solid
 
@@ -219,7 +227,15 @@ please use the following workflow:
   apps, and so on.
   
 ## Places to chat
- 
-We use Discourse. There is a place to introduce yourself and get to know others (https://forum.solidproject.org/t/welcome-to-the-solid-forum-please-introduce-yourself-here-great-to-have-you-on-board/440/20), a general chat(https://forum.solidproject.org/t/simply-chat-a-place-for-light-hearted-quick-questions-and-comments/441/3), and a place to talk about your idea to get feedback and find out about others working on similar ideas (https://forum.solidproject.org/c/app-communities).
- 
- 
+
+We will only be able to build a dataistic web if we work together!
+
+Here's some ways to engage with the Solid Community:
+
+#### 1. Solid Forum
+- **Link:** https://forum.solidproject.org/
+- **Description:** If you are getting familiar with Solid or building an app, this is the place to ask and speak to others in the Solid Community.
+
+#### 2. Solid Chat 
+- **Link:** https://gitter.im/solid/chat
+- **Description:** If you have technical questions about the Solid Spec, Solid Core or Building Solid Apps, then come hang out in here! Also please help us out by assisting others with technical questions when you can!
