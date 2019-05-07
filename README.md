@@ -6,6 +6,8 @@
 
 > Re-decentralizing the web
 
+Read more about [Solid information](https://github.com/solid/information).
+
 Solid (derived from "**so**cial **li**nked **d**ata") is a proposed set of
 conventions and tools for building *decentralized Web applications* based on
 [Linked Data](http://www.w3.org/DesignIssues/LinkedData.html) principles. Solid
