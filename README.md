@@ -47,7 +47,7 @@ Specifically, Solid is:
   libraries (such as [solid-auth-client](https://github.com/solid/solid-auth-client)) that run on
   the Solid platform.
 * A community providing documentation, discussion (see the
-  [solid forum](https://forum.solidproject.org)) and
+  [solid forum](https://forum.solidproject.org)), and
   [talks/presentations](https://github.com/solid/talks).
 
 ## Standards Used
