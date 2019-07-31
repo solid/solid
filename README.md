@@ -20,10 +20,8 @@ Solid is made possible by a community of [contributors](https://github.com/solid
 
 1. [About Solid](#about-solid)
 2. [Standards Used](#standards-used)
-3. [Platform Notes](#platform-notes)
-4. [Project directory](#project-directory)
-5. [Contributing to Solid](#contributing-to-solid)
-  * [Pre-Requisites](#pre-requisites)
+3. [Project directory](#project-directory)
+4. [Contributing to Solid](#contributing-to-solid)
   * [Solid Project Workflow](#solid-project-workflow)
 
 ## About Solid
@@ -49,8 +47,7 @@ Specifically, Solid is:
   libraries (such as [solid-auth-client](https://github.com/solid/solid-auth-client)) that run on
   the Solid platform.
 * A community providing documentation, discussion (see the
-  [solid forum](https://forum.solidproject.org)),
-  [tutorials](https://github.com/solid/solid#tutorials) and
+  [solid forum](https://forum.solidproject.org)), and
   [talks/presentations](https://github.com/solid/talks).
 
 ## Standards Used
