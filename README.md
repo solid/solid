@@ -178,7 +178,7 @@ There are two forms of authentication we use, and so two types of account.
 #### WebID-OIDC
 
 This uses OpenID Connect to give you a WebID. It involves signing in with a password at your chosen
-identity provider, such as (2018/2) [solid.community](https://solid.community/), or [solidtest.space](https://solidtest.space/). 
+identity provider, such as (2018/2) [solid.community](https://solid.community/).
 
 #### WebID_TLS
 
