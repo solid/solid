@@ -6,6 +6,8 @@
 
 > Re-decentralizing the web
 
+Read more about [Solid information](https://github.com/solid/information).
+
 Solid (derived from "**so**cial **li**nked **d**ata") is a proposed set of
 conventions and tools for building *decentralized Web applications* based on
 [Linked Data](http://www.w3.org/DesignIssues/LinkedData.html) principles. Solid
@@ -55,8 +57,7 @@ Specifically, Solid is:
   libraries (such as [solid-auth-client](https://github.com/solid/solid-auth-client)) that run on
   the Solid platform.
 * A community providing documentation, discussion (see the
-  [solid forum](https://forum.solidproject.org)),
-  [tutorials](https://github.com/solid/solid#tutorials) and
+  [solid forum](https://forum.solidproject.org)), and
   [talks/presentations](https://github.com/solid/talks).
 
 ## Standards Used
@@ -187,7 +188,7 @@ There are two forms of authentication we use, and so two types of account.
 #### WebID-OIDC
 
 This uses OpenID Connect to give you a WebID. It involves signing in with a password at your chosen
-identity provider, such as (2018/2) [solid.community](https://solid.community/), or [solidtest.space](https://solidtest.space/). 
+identity provider, such as (2018/2) [solid.community](https://solid.community/).
 
 #### WebID_TLS
 
@@ -227,8 +228,6 @@ please use the following workflow:
   apps, and so on.
   
 ## Places to chat
-
-We will only be able to build a dataistic web if we work together!
 
 Here's some ways to engage with the Solid Community:
 
