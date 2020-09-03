@@ -1,5 +1,5 @@
-> This Repo is a Legacy Repo and no longer actively maintained. Please visit [Solid's official website](https://solidproject.org/) instead.
->
+> This is an archived, legacy repository that is no longer actively maintained. Please visit the [official Solid website](https://solidproject.org/) instead.
+
 # Directions for patch distribution
 
 Currently (2017-01) the solid code sends patches -- notification
