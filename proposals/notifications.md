@@ -1,3 +1,5 @@
+> This Repo is a Legacy Repo and no longer actively maintained. Please visit [Solid's official website](https://solidproject.org/) instead.
+
 # Solid inboxes and notifications
 
 **Note:** The main notification spec has moved to:

@@ -1,3 +1,5 @@
+> This Repo is a Legacy Repo and no longer actively maintained. Please visit [Solid's official website](https://solidproject.org/) instead.
+
 ### WebID-RSA
 
 WebID-RSA is somewhat similar to WebID-TLS, in that a public RSA key is

@@ -1,3 +1,5 @@
+> This Repo is a Legacy Repo and no longer actively maintained. Please visit [Solid's official website](https://solidproject.org/) instead.
+
 # Solid Application Data Discovery
 
 The following describes application data discovery in the Solid framework

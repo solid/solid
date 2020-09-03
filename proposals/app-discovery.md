@@ -1,3 +1,5 @@
+> This Repo is a Legacy Repo and no longer actively maintained. Please visit [Solid's official website](https://solidproject.org/) instead.
+
 # Solid application configuration/preferences discovery (Draft)
 
 The following describes app configuration discovery in the Solid framework 

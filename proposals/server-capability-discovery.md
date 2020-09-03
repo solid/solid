@@ -1,3 +1,5 @@
+> This Repo is a Legacy Repo and no longer actively maintained. Please visit [Solid's official website](https://solidproject.org/) instead.
+
 ## Server Capability Discovery
 
 (Proposed addition to the [Recommendations for Client App Implementation](https://github.com/solid/solid-spec#recommendations-for-server-implementations) section of the Solid specs.)

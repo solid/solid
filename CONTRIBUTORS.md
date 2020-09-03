@@ -1,3 +1,5 @@
+> This Repo is a Legacy Repo and no longer actively maintained. Please visit [Solid's official website](https://solidproject.org/) instead.
+
 # Contributors to the Solid project
 
 The Solid community wants to acknowledge the hard work and dedication put in by many people, several of whom are listed below.
