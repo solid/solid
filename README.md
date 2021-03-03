@@ -1,3 +1,5 @@
+> This is an archived, legacy repository that is no longer actively maintained. Please visit the [official Solid website](https://solidproject.org/) instead.
+
 # Solid
 
 [![](https://img.shields.io/badge/project-Solid-7C4DFF.svg?style=flat-square)](https://github.com/solid/solid)

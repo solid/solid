@@ -1,3 +1,5 @@
+> This is an archived, legacy repository that is no longer actively maintained. Please visit the [official Solid website](https://solidproject.org/) instead.
+
 # Contributors to the Solid project
 
 The Solid community wants to acknowledge the hard work and dedication put in by many people, several of whom are listed below.

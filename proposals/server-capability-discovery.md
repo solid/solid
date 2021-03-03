@@ -1,3 +1,5 @@
+> This is an archived, legacy repository that is no longer actively maintained. Please visit the [official Solid website](https://solidproject.org/) instead.
+
 ## Server Capability Discovery
 
 (Proposed addition to the [Recommendations for Client App Implementation](https://github.com/solid/solid-spec#recommendations-for-server-implementations) section of the Solid specs.)

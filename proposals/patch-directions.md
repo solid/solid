@@ -1,3 +1,4 @@
+> This is an archived, legacy repository that is no longer actively maintained. Please visit the [official Solid website](https://solidproject.org/) instead.
 
 # Directions for patch distribution
 
