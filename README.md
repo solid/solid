@@ -182,10 +182,7 @@ identity provider, such as (2018/2) [solid.community](https://solid.community/).
 
 #### WebID_TLS
 
-A WebID profile from one of the Solid-compliant [identity providers](https://solid.github.io/solid-idps/), such as [databox.me](https://databox.me/),  
-
-With WebID-TLS, you will need to make a WebID browser certificate from the above profile (this is usually created
-when you sign up for a WebID profile account, but it only works on Firefox at the moment (2018)).
+To use WebID-TLS, you will need to make a WebID browser certificate from one of the Solid-compliant [identity providers](https://solid.github.io/solid-idps/) - this is usually created when you sign up for a WebID profile account.
 
 ### Running a server
 
