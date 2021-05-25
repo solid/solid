@@ -19,8 +19,8 @@ a. Prompting the user to select the location of every relevant instance or
 b. Scanning through the entire dataspace/root storage of the user.
 
 For example, when a user installs a new Contacts Manager app, the app does not
-need to scan all of the containers in a user's storage, looking for relevant
-Contacts or AddressBook resources. Instead, it can query the Type Index registry
+need to scan all of the containers in a user's storage, looking for relevant `VCard` resources.
+Instead, it can query the Type Index registry
 and discover only the resources and containers it cares about.
 
 ## Data Discovery Workflow
@@ -81,10 +81,10 @@ the instances of that type.
 An example Listed Type Index resource might contain:
 
 ```ttl
-# Maps the type vcard:AddressBook to an index document
+# Maps the type vcard:VCard to an index document
 <#ab09fd> a solid:TypeRegistration;
-    solid:forClass vcard:AddressBook;
-    solid:instance </contacts/myPublicAddressBook.ttl>.
+    solid:forClass vcard:VCard;
+    solid:instance </contacts/index>.
 
 # Maps the type sioc:Post to a container
 <#ab09cc> a solid:TypeRegistration;
@@ -121,8 +121,8 @@ Example Listed Type Index resource containing one registration entry:
     a solid:ListedDocument.
 
 <#ab09fd> a solid:TypeRegistration;
-    solid:forClass vcard:AddressBook;
-    solid:instance </contacts/myPublicAddressBook.ttl>.
+    solid:forClass vcard:VCard;
+    solid:instance </contacts/index>.
 ```
 
 ### Unlisted Type Index
