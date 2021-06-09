@@ -54,17 +54,14 @@ All RDF examples are written in Turtle syntax.
 
 ## Discovery
 
-An inbox container must be discoverable via the `solid:inbox` property, and
-should be instances of `solid:Inbox`. Each notification can be discovered via
+An inbox container must be discoverable via the `ldp:inbox` property
+Each notification can be discovered via
 `solid:notification` (or `ldp:contains` for LDP based applications) relations.
 Notifications that are of LDP RDF Source should be instances of
-`solid:Notification`. Although neither `solid:Inbox` or `solid:Notification` is
-ultimately required to discover inboxes or notifications, it is good practice to
-instantiate resources for the purpose of data integrity and reuse. An example:
+`solid:Notification`. An example:
 
 ```
-<https://example.org/profile> solid:inbox <https://example.net/inbox/> .
-<https://example.net/inbox/> a solid:Inbox .
+<https://example.org/profile> ldp:inbox <https://example.net/inbox/> .
 <https://example.net/inbox/> solid:notification <https://example.net/inbox/abc123> .
 <https://example.net/inbox/abc123> a solid:Notification .
 ```
