@@ -22,7 +22,7 @@ Solid is made possible by a community of [contributors](https://github.com/solid
 2. [Standards Used](#standards-used)
 3. [Project directory](#project-directory)
 4. [Contributing to Solid](#contributing-to-solid)
-  * [Solid Project Workflow](#solid-project-workflow)
+    * [Solid Project Workflow](#solid-project-workflow)
 
 ## About Solid
 
