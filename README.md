@@ -1,6 +1,6 @@
 # Solid
 
-[![](https://img.shields.io/badge/project-Solid-7C4DFF.svg?style=flat-square)](https://github.com/solid/solid)
+[![](https://img.shields.io/badge/project-Solid-7C4DFF.svg?style=flat-square)](https://github.com/solid/solid) [![Join the chat at https://gitter.im/solid/solids-tests](https://badges.gitter.im/solid/solids-tests.svg)](https://gitter.im/solid/solids-tests?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 ![Solid Logo](https://avatars3.githubusercontent.com/u/14262490?v=3&s=200)
 
