@@ -6,7 +6,19 @@
 
 > Re-decentralizing the web
 
-Read more about [Solid information](https://github.com/solid/information).
+---
+
+**This repository contains early documentation about the Solid project and
+  kept here as a historical record.**
+
+**The curent work on [Solid Technical Reports](https://solidproject.org/TR/)
+  (TR) of the [W3C Solid Community Group]
+  (https://www.w3.org/community/solid/) (CG) is carried out in
+  https://github.com/solid/specification . Other information about the
+  [Solid Project](https://solidproject.org/) is available from the main
+  website.**
+
+---
 
 Solid (derived from "**so**cial **li**nked **d**ata") is a proposed set of
 conventions and tools for building *decentralized Web applications* based on
@@ -182,7 +194,7 @@ identity provider, such as (2018/2) [solid.community](https://solid.community/).
 
 #### WebID_TLS
 
-A WebID profile from one of the Solid-compliant [identity providers](https://solid.github.io/solid-idps/), such as [databox.me](https://databox.me/),  
+A WebID profile from one of the Solid-compliant [identity providers](https://solid.github.io/solid-idps/), such as [databox.me](https://databox.me/),
 
 With WebID-TLS, you will need to make a WebID browser certificate from the above profile (this is usually created
 when you sign up for a WebID profile account, but it only works on Firefox at the moment (2018)).
@@ -216,8 +228,8 @@ please use the following workflow:
 3. The individual [solid/solid](https://github.com/solid) issues can coordinate
   and track component/dependent issues on the various affected Solid servers,
   apps, and so on.
-  
+
 ## Places to chat
 https://github.com/solid/information#solid-conversations
- 
- 
+
+
