@@ -10,4 +10,4 @@ Solid is a proposed set of standards and tools
 for building *decentralized Web applications* based on
 [Linked Data](http://www.w3.org/DesignIssues/LinkedData.html) principles.
 
-Read more on [https://solidproject.org/](solidproject.org).
+Read more on [solidproject.org](https://solidproject.org/).
