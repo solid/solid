@@ -1,3 +1,5 @@
+> This is an archived, legacy repository that is no longer actively maintained. Please visit the [official Solid website](https://solidproject.org/) instead.
+
 # Solid application configuration/preferences discovery (Draft)
 
 The following describes app configuration discovery in the Solid framework 
